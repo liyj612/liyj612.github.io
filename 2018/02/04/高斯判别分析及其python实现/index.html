@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="这是一个统计菜鸟慢慢飞成大神的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lisa’s Blog">
-<meta property="og:url" content="http://liyj612@github.io/index.html">
+<meta name="description" content="简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为： $argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1） Assumption： $y\sim Bernoulli">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高斯判别分析及其python实现">
+<meta property="og:url" content="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/index.html">
 <meta property="og:site_name" content="Lisa’s Blog">
-<meta property="og:description" content="这是一个统计菜鸟慢慢飞成大神的博客">
+<meta property="og:description" content="简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为： $argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1） Assumption： $y\sim Bernoulli">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/gauss.png">
+<meta property="og:updated_time" content="2018-02-06T02:14:56.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lisa’s Blog">
-<meta name="twitter:description" content="这是一个统计菜鸟慢慢飞成大神的博客">
+<meta name="twitter:title" content="高斯判别分析及其python实现">
+<meta name="twitter:description" content="简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为： $argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1） Assumption： $y\sim Bernoulli">
+<meta name="twitter:image" content="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/gauss.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://liyj612@github.io/"/>
+  <link rel="canonical" href="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/"/>
 
 
 
 
 
-  <title>Lisa’s Blog</title>
+  <title>高斯判别分析及其python实现 | Lisa’s Blog</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,130 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/06/try/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lisa">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lisa’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/06/try/" itemprop="url">try</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T10:17:04+08:00">
-                2018-02-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> $\lambda $</p>
-<p>$\mu $</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -370,9 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/04/高斯判别分析及其python实现/" itemprop="url">高斯判别分析及其python实现</a></h1>
+          <h1 class="post-title" itemprop="name headline">高斯判别分析及其python实现</h1>
         
 
         <div class="post-meta">
@@ -422,9 +302,7 @@
       
 
       
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对<script type="math/tex">p(x|y)</script>和<script type="math/tex">p(y)</script>进行建模，此处假设输出空间为<script type="math/tex">y\in\{0,1\}</script>，则目标函数为：</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对<script type="math/tex">p(x|y)</script>和<script type="math/tex">p(y)</script>进行建模，此处假设输出空间为<script type="math/tex">y\in\{0,1\}</script>，则目标函数为：</p>
 <p>$argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1）</p>
 <p>Assumption：</p>
 <p>$y\sim Bernoulli(\phi ) $         即： <script type="math/tex">p(y)~\phi ^y(1-\phi )^{(1-y)}</script>                                                                     （2）</p>
@@ -462,8 +340,6 @@
 <p> 损失为105，也就是说，1000个数据集中判错个数为105.</p>
 <p><strong>预测结果的准确性与数据的可分程度有关</strong></p>
 
-          
-        
       
     </div>
     
@@ -478,275 +354,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lisa">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lisa’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/04/感知机原理及其在python中算法实现/" itemprop="url">感知机原理及其在python中算法实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T13:02:38+08:00">
-                2018-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h1><h2 id="感知机简介"><a href="#感知机简介" class="headerlink" title="感知机简介"></a>感知机简介</h2><p>感知机是一个线性分类器，且是二分类的分类模型，输入空间<script type="math/tex">x\subset R^n</script>，输出空间<script type="math/tex">y=\{1,-1\}</script>.</p>
-<p>则感知机表示从输入到输出空间的函数，具体形式为：</p>
-<p>​                                                           $f(x)=sign(w\cdot x+b )$</p>
-<p>其中<script type="math/tex">w\in R^n</script>叫做权值向量(weight vector)，<script type="math/tex">b</script>叫做偏置(bias)。sign函数是符号函数，即：</p>
-<p>​                                                             $sign(x)=I(x\geq 0)$</p>
-<p>直观上讲，线性函数<script type="math/tex">w\cdot x+b</script>将一个线性可分的数据集分为正负两类。如图：</p>
-<p><img src="/2018/02/04/感知机原理及其在python中算法实现/捕获.PNG" alt="感知机"></p>
-<h2 id="感知机学习算法"><a href="#感知机学习算法" class="headerlink" title="感知机学习算法"></a>感知机学习算法</h2><p>给定一个训练数据集$T={(x_1,y_1)…(x_N,y_N)}$，其中误分类点集合为M，我们的目标函数是最小化损失函数(只有被错误分类的点才能造成损失)，即：</p>
-<p>​                                           $minL(w,b)=-\sum_{x_i\in M}y_i(w\cdot x+b)$</p>
-<p>则利用随机梯度下降法(每次选取一个误分类点进行参数更新)，目标函数关于<script type="math/tex">w,b</script>的偏导数为：  </p>
-<p>​                                     $\nabla _w L(w,b)=-\sum_{x_i \in M}y_ix_i,\nabla _b L(w,b)=-\sum_{x_i\in M}y_i$</p>
-<p>则每一次的更新迭代为：</p>
-<p>​                                                   $w=w+\eta y_ix_i,   b=b+\eta y_i$</p>
-<p>因此感知机的实现算法为：</p>
-<p>1.初始值<script type="math/tex">w_0,b_0</script></p>
-<p>2.<script type="math/tex">i=1</script>，如果<script type="math/tex">y_i(w\cdot x_i+b)\leq0</script>，更新参数：<script type="math/tex">w=w+\eta y_ix_i,   b=b+\eta y_i，i=1</script>,否则<script type="math/tex">i+=1</script></p>
-<p>3.重复2直到<script type="math/tex">i=N</script></p>
-<h1 id="python算法实现"><a href="#python算法实现" class="headerlink" title="python算法实现"></a>python算法实现</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''用python来实现感知机'''</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  <span class="comment">##加载需要的包</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> ggplot <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">w=[<span class="number">-2.1</span>,<span class="number">-3.8</span>];b=<span class="number">2.4</span> <span class="comment">##权重和偏置</span></span><br><span class="line">n=<span class="number">200</span>;p=<span class="number">2</span>           <span class="comment">#样本数为200，变量数为2</span></span><br><span class="line">x=np.zeros([n,p])   <span class="comment">#之后存入x和y</span></span><br><span class="line">y=np.zeros(n)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):  <span class="comment">#产生x和y</span></span><br><span class="line">  x[i]=np.random.randn(<span class="number">1</span>,p)</span><br><span class="line">  <span class="keyword">if</span> (sum(w*x[i])+b)&gt;=<span class="number">0</span> :y[i]=<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:y[i]=<span class="number">-1</span></span><br><span class="line"><span class="comment">##下面进行数据可视化</span></span><br><span class="line">x_df,y_df=pd.DataFrame(x),pd.DataFrame(y)</span><br><span class="line">data=pd.concat([y_df,x_df],axis=<span class="number">1</span>)</span><br><span class="line">data.columns=[<span class="string">'y'</span>,<span class="string">'x1'</span>,<span class="string">'x2'</span>]</span><br><span class="line">ggplot(aes(x=<span class="string">'x1'</span>,y=<span class="string">'x2'</span>,color=<span class="string">'y'</span>),data)+geom_point()<span class="comment">#可以看出数据是线性可分的</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">#下面进行感知机训练</span></span><br><span class="line"><span class="comment">#设初值，其中eta是学习率，这里取为0.1</span></span><br><span class="line">w_0=[<span class="number">-2</span>,<span class="number">-3.5</span>];b_0=<span class="number">2</span>;eta=<span class="number">0.1</span>;i=<span class="number">0</span>;iter=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;n):</span><br><span class="line">  <span class="keyword">if</span> (y[i]*sum(w_0*x[i])+b_0)&lt;<span class="number">0</span> :</span><br><span class="line">    w_0+=eta*y[i]*x[i]</span><br><span class="line">    b_0+=eta*y[i]</span><br><span class="line">    i=<span class="number">0</span><span class="comment">#每次用误分点更新之后，从头继续查找</span></span><br><span class="line">  <span class="keyword">else</span>:i+=<span class="number">1</span><span class="comment">#此点不是误分点时，继续往下查找</span></span><br><span class="line">  iter+=<span class="number">1</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>]=[<span class="string">'SimHei'</span>]<span class="comment">#用来正常显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>]=<span class="keyword">False</span><span class="comment">#用来正常显示负号</span></span><br><span class="line">ggplot(aes(x=<span class="string">'x1'</span>,y=<span class="string">'x2'</span>),data)+geom_point(aes(color=<span class="string">'y'</span>))+geom_abline(slope=-</span><br><span class="line">w_0</span><br><span class="line">b_0</span><br><span class="line">w_0[<span class="number">0</span>]/w_0[<span class="number">1</span>],intercept=-b_0/w_0[<span class="number">1</span>],color=<span class="string">'red'</span>)+</span><br><span class="line">  ggtitle(<span class="string">'感知机'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>结果如下</strong></p>
-<p><img src="/2018/02/04/感知机原理及其在python中算法实现/perceptron.png" alt="点及分类线"></p>
-<p><em>从图中也能看出，我们的样本点是线性可分的，且感知机模型能正确将样本点进行分类。</em></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/第一次写博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lisa">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lisa’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/第一次写博客/" itemprop="url">第一次写博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:33:29+08:00">
-                2018-02-03
-              </time>
+              <a href="/2018/02/04/感知机原理及其在python中算法实现/" rel="next" title="感知机原理及其在python中算法实现">
+                <i class="fa fa-chevron-left"></i> 感知机原理及其在python中算法实现
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2018/02/06/try/" rel="prev" title="try">
+                try <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="第一次写博客"><a href="#第一次写博客" class="headerlink" title="第一次写博客"></a>第一次写博客</h1><pre><code>##我是二级标题
-</code></pre><p>作为傻臭臭的<strong>老公</strong>，搭建博客这种东西，当然是我来了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String name = <span class="string">"123"</span>;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -756,138 +397,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lisa">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lisa’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T20:34:56+08:00">
-                2018-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -895,6 +409,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -915,8 +433,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -967,6 +494,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预测"><span class="nav-number">2.</span> <span class="nav-text">预测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python实现"><span class="nav-number">3.</span> <span class="nav-text">python实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1107,6 +650,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1164,26 +711,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
