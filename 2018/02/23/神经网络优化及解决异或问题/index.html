@@ -89,13 +89,16 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/tuhanshu.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/feitu.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/moment.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/Nesterov.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20160824161755284">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/shenjingyuan.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/guiyihua.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/yihuo.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/sanceng.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/init_0.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/init_gaussion.png">
-<meta property="og:updated_time" content="2018-02-26T12:32:22.415Z">
+<meta property="og:updated_time" content="2018-02-26T12:53:17.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络优化及解决异或问题">
 <meta name="twitter:description" content="神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）： 拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $ 目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$ 为了使J(\theta)达到最小，一般采用如下方法来训练参数。 梯度下降法（B">
@@ -347,77 +350,41 @@
 <p>AdaGrad（Adaptive Gradient）:  <script type="math/tex">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t</script> 其中<script type="math/tex">\Delta \theta_t=\theta_t-\theta_{t-1}   ,  G_t =\sum_{\tau=1}^{t}g_\tau*g_\tau</script>  是第<script type="math/tex">\tau</script> 次迭代时的梯度，对于小批量梯度下降法为利用小批量样本计算出的梯度。</p>
 <p>特点： 如果某个参数的偏导数累计比较大，则学习率相对较小，整体上来说，随着迭代次数的增加，学习率逐渐减小；经过一定次数迭代之后依然没有收敛，但是此时学习率已经很小，可能出现学习率可能过早衰减的情况。</p>
 <p>RMSprop（Root Mean Square Prop)：</p>
-<script type="math/tex; mode=display">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t $$  , 其中$$G_t=\beta G_{t-1}+(1-\beta)g_t *g_t$$,$$\beta$$一般取0.9
-
-计算累计梯度时，越靠近t时的梯度贡献越大，越远离t时的梯度贡献越小。
-
-AdaDelta（Adaptive Delta）：
-
-$\Delta x_{t-1}^2=\beta \Delta x_{t-2}^2+(1-\beta)\Delta \theta_{t-1}*\Delta \theta_{t-1}$
-
-$\Delta \theta_t=-\frac{\sqrt{\Delta x_{t-1}^2 +\epsilon}}{\sqrt{G_t +\epsilon}}g_t $
-
-AdaDelta算法将RMSprop算法中的固定$$\alpha$$改为动态计算的$$\sqrt{\Delta x_{t-1}^2}$$,可以在一定程度上抑制学习率的波动。
-
-**1.2.1 ** **动量法：（改变梯度）**
-
-以上是改变学习率，但是移动的方向还是当前一步的负梯度，但是动量法是改变移动的方向。
-
-利用最近一段时间内的平均梯度来代替当前时刻的梯度作为参数更新的方向。
-
-$\Delta \theta_t =\rho \Delta \theta_{t-1}-\alpha g_t=\rho(\rho \Delta \theta_{t-2}-\alpha g_{g_{t-1}})-\alpha g_t =...=\rho ^k \Delta \theta_{t-k}-\alpha(g_t+\rho g_{t-1}+...+\rho^{k-1 }g_{t-k+1})$
-
-其中$$\rho$$为动量因子,$$\alpha$$通常为0.9， 为学习率。学习率不变，改变参数更新的方向，由原来的$$g_t$$变为最近一段时间内梯度的加权平均。
-
-特点： 当某个参数在最近一段时间内梯度方向一致时，其真实的参数更新幅度会变大。迭代初期可以起到很好的加速作用，迭代后期在局部最小值来回振荡时，会减小增幅，抑制振荡。
-
-![moment](神经网络优化及解决异或问题/moment.png)
-
-**1.2.2   ** **Nesterov** **加速梯度算法（Nesterov Accelerated Gradient,NAG常用）:**
-
-相比于动量法，NAG直接先走到梯度改变后的地方，然后再根据那里的梯度再前进一下，如图所示：
-
-![Nesterov](神经网络优化及解决异或问题/Nesterov.png)
-
-**1.3AdaM(Adaptive Moment) ** **：（学习率+梯度，常用）**
-
-可以看作动量法和RMSprop的结合，不但使用动量来更新方向，还利用自适应学习率。
-
-​        $$M_t =\beta _1 M_{t-1}+(1-\beta_1)g_t$$                                               相当于梯度的均值（一阶矩）
-
-​         $$G_t=\beta_2 G_{t-1}+(1-\beta_2)g_t *g_t$$                                        相当于梯度的方差（二阶矩）
-
-​         $$\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}M_t$$                                                             $$\alpha$$ 取0.001,$$\beta_1$$ 取0.9,$$\beta_2$$取0.99
-
-但是在迭代初期， 会与真实值之间存在偏差，进行偏差修正：
-
-​         $\hat M_t =\frac{M_t}{1-\beta_1^t} $                     $ \hat G_t=\frac{G_t}{1-\beta_2^t}$                $\Delta \theta_t=-\frac{\alpha}{\sqrt{\hat G_t+\epsilon}}\hat M_t$
-
-**1.4 ** **梯度截断（GradientClipping）：**
-
-在使用梯度下降法来进行参数学习时，有时梯度会突然增大，为了防止梯度爆炸，要进行梯度截断
-
-​按值截断： $$g_t=\left\{\begin{aligned}a &  & ||g_t||<a  \\ b &  & ||g_t||>b \\g_t &  & a \leq||g_t||\leq b \end{aligned}\right.$$                      a，b为超参数
-
-按模截断： $$g_t=\left\{\begin{aligned}g_t &  & ||g_t||^2 \leq b \\\frac{b}{||g_t||}g_t  &  &  ||g_t||^2 > b \end{aligned}\right.$$                    b为超参数
-
-除了这些参数，神经网络中还存在许多超参数，比如网络层数；每层的神经元数量；小批量下降法中每次选取的样本数量，对于这些超参数，一般利用网格搜索，或者使用经验值。
-
-几种方法的效率如图:
-
-
-
-<img src="http://img.blog.csdn.net/20160824161755284" width="340px" />
-
-
-
-#### 2 .**参数初始化**
-
-非凸问题中初始化参数尤其重要，在感知器和logistic回归中，一般将参数全部初始化为0，但是这对于神经网络是错误的做法。如果参数全部初始化为0，则第一个隐藏层的激活值全为0，会导致神经元没有区分性，要采用随机初始化。原则：一个神经元上连接的输入较多，则每个输入的权重就要相对小一些，否则会导致输出过大（ReLU）或过饱和（sigmoid）。
-
-**2.1Gaussion** **分布初始化：**
-
-初始化的参数来源于固定均值和固定方差的正态分布。     $$\theta_0 \sim N(0,\sqrt{\frac{1}{n^{l-1}}})</script><p>​                      </p>
+<p>$\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t $</p>
+<p> 其中<script type="math/tex">G_t=\beta G_{t-1}+(1-\beta)g_t *g_t</script>,<script type="math/tex">\beta</script>一般取0.9</p>
+<p>计算累计梯度时，越靠近t时的梯度贡献越大，越远离t时的梯度贡献越小。</p>
+<p>AdaDelta（Adaptive Delta）：</p>
+<p>$\Delta x_{t-1}^2=\beta \Delta x_{t-2}^2+(1-\beta)\Delta \theta_{t-1}*\Delta \theta_{t-1}$</p>
+<p>$\Delta \theta_t=-\frac{\sqrt{\Delta x_{t-1}^2 +\epsilon}}{\sqrt{G_t +\epsilon}}g_t $</p>
+<p>AdaDelta算法将RMSprop算法中的固定<script type="math/tex">\alpha</script>改为动态计算的<script type="math/tex">\sqrt{\Delta x_{t-1}^2}</script>,可以在一定程度上抑制学习率的波动。</p>
+<p><strong>1.2.1 </strong> <strong>动量法：（改变梯度）</strong></p>
+<p>以上是改变学习率，但是移动的方向还是当前一步的负梯度，但是动量法是改变移动的方向。</p>
+<p>利用最近一段时间内的平均梯度来代替当前时刻的梯度作为参数更新的方向。</p>
+<p>$\Delta \theta_t =\rho \Delta \theta_{t-1}-\alpha g_t=\rho(\rho \Delta \theta_{t-2}-\alpha g_{g_{t-1}})-\alpha g_t =…=\rho ^k \Delta \theta_{t-k}-\alpha(g_t+\rho g_{t-1}+…+\rho^{k-1 }g_{t-k+1})$</p>
+<p>其中<script type="math/tex">\rho</script>为动量因子,<script type="math/tex">\alpha</script>通常为0.9， 为学习率。学习率不变，改变参数更新的方向，由原来的<script type="math/tex">g_t</script>变为最近一段时间内梯度的加权平均。</p>
+<p>特点： 当某个参数在最近一段时间内梯度方向一致时，其真实的参数更新幅度会变大。迭代初期可以起到很好的加速作用，迭代后期在局部最小值来回振荡时，会减小增幅，抑制振荡。</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/moment.png" alt="moment"></p>
+<p><strong>1.2.2   </strong> <strong>Nesterov</strong> <strong>加速梯度算法（Nesterov Accelerated Gradient,NAG常用）:</strong></p>
+<p>相比于动量法，NAG直接先走到梯度改变后的地方，然后再根据那里的梯度再前进一下，如图所示：</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/Nesterov.png" alt="Nesterov"></p>
+<p><strong>1.3AdaM(Adaptive Moment) </strong> <strong>：（学习率+梯度，常用）</strong></p>
+<p>可以看作动量法和RMSprop的结合，不但使用动量来更新方向，还利用自适应学习率。</p>
+<p>​        <script type="math/tex">M_t =\beta _1 M_{t-1}+(1-\beta_1)g_t</script>                                               相当于梯度的均值（一阶矩）</p>
+<p>​         <script type="math/tex">G_t=\beta_2 G_{t-1}+(1-\beta_2)g_t *g_t</script>                                        相当于梯度的方差（二阶矩）</p>
+<p>​         <script type="math/tex">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}M_t</script>                                                             <script type="math/tex">\alpha</script> 取0.001,<script type="math/tex">\beta_1</script> 取0.9,<script type="math/tex">\beta_2</script>取0.99</p>
+<p>但是在迭代初期， 会与真实值之间存在偏差，进行偏差修正：</p>
+<p>​         $\hat M_t =\frac{M_t}{1-\beta_1^t} $                     $ \hat G_t=\frac{G_t}{1-\beta_2^t}$                $\Delta \theta_t=-\frac{\alpha}{\sqrt{\hat G_t+\epsilon}}\hat M_t$</p>
+<p><strong>1.4 </strong> <strong>梯度截断（GradientClipping）：</strong></p>
+<p>在使用梯度下降法来进行参数学习时，有时梯度会突然增大，为了防止梯度爆炸，要进行梯度截断</p>
+<p>​按值截断： <script type="math/tex">g_t=\left\{\begin{aligned}a &  & ||g_t||<a  \\ b &  & ||g_t||>b \\g_t &  & a \leq||g_t||\leq b \end{aligned}\right.</script>                      a，b为超参数</p>
+<p>按模截断： <script type="math/tex">g_t=\left\{\begin{aligned}g_t &  & ||g_t||^2 \leq b \\\frac{b}{||g_t||}g_t  &  &  ||g_t||^2 > b \end{aligned}\right.</script>                    b为超参数</p>
+<p>除了这些参数，神经网络中还存在许多超参数，比如网络层数；每层的神经元数量；小批量下降法中每次选取的样本数量，对于这些超参数，一般利用网格搜索，或者使用经验值。</p>
+<p>几种方法的效率如图:</p>
+<p><img src="http://img.blog.csdn.net/20160824161755284" width="340px"></p>
+<h4 id="2-参数初始化"><a href="#2-参数初始化" class="headerlink" title="2 .参数初始化"></a>2 .<strong>参数初始化</strong></h4><p>非凸问题中初始化参数尤其重要，在感知器和logistic回归中，一般将参数全部初始化为0，但是这对于神经网络是错误的做法。如果参数全部初始化为0，则第一个隐藏层的激活值全为0，会导致神经元没有区分性，要采用随机初始化。原则：一个神经元上连接的输入较多，则每个输入的权重就要相对小一些，否则会导致输出过大（ReLU）或过饱和（sigmoid）。</p>
+<p><strong>2.1Gaussion</strong> <strong>分布初始化：</strong></p>
+<p>初始化的参数来源于固定均值和固定方差的正态分布。     <script type="math/tex">\theta_0 \sim N(0,\sqrt{\frac{1}{n^{l-1}}})</script> </p>
+<p>​                      </p>
 <p>​                              <script type="math/tex">n^{l-1}</script>个神经元            <script type="math/tex">n^l</script>个神经元，未激活的输出值为z，经激活后为a</p>
 <p><img src="/2018/02/23/神经网络优化及解决异或问题/shenjingyuan.png" alt="shenjingyuan"></p>
 <p>对于隐藏层的任意一个神经元<script type="math/tex">z^l</script>,<script type="math/tex">z^l =\sum_{i=1}^{n^{l-1}}w_i^l a_i^{l-1}</script> ,假设<script type="math/tex">w_i^l</script> 和<script type="math/tex">a_i^l</script> 相互独立且均值均为0,则 <script type="math/tex">E(z^l)=0,var(z^l)=n^{l-1}var(w_i^l)var(a_i^{l-1})</script>,我们希望输入值<script type="math/tex">a_i^{l-1}</script>和输出值$a_i^l$方差一致，即经过隐藏层作用之后方差不变，则:</p>
@@ -628,7 +595,7 @@ $\Delta \theta_t =\rho \Delta \theta_{t-1}-\alpha g_t=\rho(\rho \Delta \theta_{t
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络的几种求解办法"><span class="nav-number">1.</span> <span class="nav-text">神经网络的几种求解办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降法（Batch-Gradient-Descent-BGD）"><span class="nav-number">1.1.</span> <span class="nav-text">梯度下降法（Batch Gradient Descent,BGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降法（Stochastic-Gradient-Descent-SGD）"><span class="nav-number">1.2.</span> <span class="nav-text">随机梯度下降法（Stochastic Gradient Descent, SGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）"><span class="nav-number">1.3.</span> <span class="nav-text">小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化问题产生原因"><span class="nav-number">2.</span> <span class="nav-text">优化问题产生原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应对方法"><span class="nav-number">3.</span> <span class="nav-text">应对方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-训练方法改进"><span class="nav-number">3.1.</span> <span class="nav-text">1.训练方法改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python实现异或问题"><span class="nav-number">4.</span> <span class="nav-text">python实现异或问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络的几种求解办法"><span class="nav-number">1.</span> <span class="nav-text">神经网络的几种求解办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降法（Batch-Gradient-Descent-BGD）"><span class="nav-number">1.1.</span> <span class="nav-text">梯度下降法（Batch Gradient Descent,BGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降法（Stochastic-Gradient-Descent-SGD）"><span class="nav-number">1.2.</span> <span class="nav-text">随机梯度下降法（Stochastic Gradient Descent, SGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）"><span class="nav-number">1.3.</span> <span class="nav-text">小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化问题产生原因"><span class="nav-number">2.</span> <span class="nav-text">优化问题产生原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应对方法"><span class="nav-number">3.</span> <span class="nav-text">应对方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-训练方法改进"><span class="nav-number">3.1.</span> <span class="nav-text">1.训练方法改进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-参数初始化"><span class="nav-number">3.2.</span> <span class="nav-text">2 .参数初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python实现异或问题"><span class="nav-number">4.</span> <span class="nav-text">python实现异或问题</span></a></li></ol></div>
             
 
           </div>
