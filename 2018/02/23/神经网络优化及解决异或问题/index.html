@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）： 拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $ 目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$ 为了使J(\theta)达到最小，一般采用如下方法来训练参数。 梯度下降法（B">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络优化及解决异或问题">
+<meta property="og:url" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/index.html">
+<meta property="og:site_name" content="Lisa’s Blog">
+<meta property="og:description" content="神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）： 拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $ 目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$ 为了使J(\theta)达到最小，一般采用如下方法来训练参数。 梯度下降法（B">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/tuhanshu.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/feitu.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/shenjingyuan.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/guiyihua.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/yihuo.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/sanceng.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/init_0.png">
+<meta property="og:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/init_gaussion.png">
+<meta property="og:updated_time" content="2018-02-26T12:32:22.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="神经网络优化及解决异或问题">
+<meta name="twitter:description" content="神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）： 拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $ 目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$ 为了使J(\theta)达到最小，一般采用如下方法来训练参数。 梯度下降法（B">
+<meta name="twitter:image" content="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/tuhanshu.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/"/>
+
+
+
+
+
+  <title>神经网络优化及解决异或问题 | Lisa’s Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lisa’s Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">神经网络优化及解决异或问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T20:14:13+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="神经网络的几种求解办法"><a href="#神经网络的几种求解办法" class="headerlink" title="神经网络的几种求解办法"></a>神经网络的几种求解办法</h3><p>考虑任意一层神经网络（样本数为m，变量数为n）：</p>
+<p>拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $</p>
+<p>目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$</p>
+<p>为了使<script type="math/tex">J(\theta)</script>达到最小，一般采用如下方法来训练参数。</p>
+<h4 id="梯度下降法（Batch-Gradient-Descent-BGD）"><a href="#梯度下降法（Batch-Gradient-Descent-BGD）" class="headerlink" title="梯度下降法（Batch Gradient Descent,BGD）"></a>梯度下降法（Batch Gradient Descent,BGD）</h4><p>在更新每一个参数时都采用全部的样本m：</p>
+<p>$\frac{\partial J(\theta)}{\partial \theta_j}=-\frac{1}{m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))x_j^i$</p>
+<p>伪代码如下：</p>
+<p>Repeat{<script type="math/tex">\theta_j =\theta _j+\alpha\frac{1}{m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}</p>
+<p>特点： 每次更新使用全部的样本，得到的解是全局最优解且易于并行实现；但是当样本数目很大时，训练过程很慢。</p>
+<h4 id="随机梯度下降法（Stochastic-Gradient-Descent-SGD）"><a href="#随机梯度下降法（Stochastic-Gradient-Descent-SGD）" class="headerlink" title="随机梯度下降法（Stochastic Gradient Descent, SGD）"></a>随机梯度下降法（Stochastic Gradient Descent, SGD）</h4><p>每次选取一个样本来更新所有参数，伪代码如下：</p>
+<p>Repeat{for i=1,..m{</p>
+<p>​                                 <script type="math/tex">\theta_j =\theta _j+\alpha(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}}</p>
+<p>特点： 训练速度较快；得到的可能是局部最优解且不易于并行实现</p>
+<h4 id="小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）"><a href="#小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）" class="headerlink" title="小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）"></a>小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）</h4><p>在上面两种方法中取折衷，每次用b（通常b=10）个样本来更新参数，假设m=1000，伪代码如下：</p>
+<p>Repeat{for k=1,11,21,..991{</p>
+<p>​                                                <script type="math/tex">\theta_j =\theta _j+\alpha\frac{1}{10}\sum_{i=k}^{k+9}(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}}</p>
+<p>特点： 训练速度较快且不容易陷入局部最优陷阱。</p>
+<p><em>选择原则：</em> 如果样本量比较小，采用批量梯度下降法，样本数特别大，采用随机梯度下降法，多数情况采用小批量梯度下降法。</p>
+<h3 id="优化问题产生原因"><a href="#优化问题产生原因" class="headerlink" title="优化问题产生原因"></a>优化问题产生原因</h3><ol>
+<li>参数太多，每一层都有很多参数，计算量会迅速增加，收敛速度得到限制；</li>
+<li>非凸问题，K层神经网络（如k=2）的风险函数本质是一个多元k次函数  <script type="math/tex">f(x,y)=xy</script> ,是一个非凸函数。对于凸函数，局部最优解就是全局最优解。对于非凸函数，会有很多局部最优解。如图：</li>
+</ol>
+<p>​                                                      <img src="/2018/02/23/神经网络优化及解决异或问题/tuhanshu.png" alt="凸函数"> </p>
+<p>对于凸函数来说，无论从哪一点出发，均能达到局部最优点，且局部最优点就是全局最优点</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/feitu.png" width="380px"></p>
+<p> 对于非凸函数，局部局部最优解与全局最优解不同，且鞍点情况下，很容易陷入局部最优解。</p>
+<p>   3.梯度消失或梯度爆炸。</p>
+<h3 id="应对方法"><a href="#应对方法" class="headerlink" title="应对方法"></a>应对方法</h3><p>训练方法改进；参数初始化；变量归一化</p>
+<h4 id="1-训练方法改进"><a href="#1-训练方法改进" class="headerlink" title="1.训练方法改进"></a>1.训练方法改进</h4><p>​                                                $\theta_j=\theta_j+\alpha\frac{1}{10}\sum_{i=k}^{k+9}(y^i-h_\theta(x^i))x_j^i$                                          </p>
+<p>为了更有效的训练神经网络，在梯度下降法中需要使用以下技巧加快优化速度，主要是以下两个方面：学习率衰减和动量法</p>
+<p><strong>1.1 </strong> <strong>学习率衰减：（改变学习率）</strong> </p>
+<p>学习率<script type="math/tex">\alpha</script>的选择至关重要，过大会导致不收敛，过小会导致收敛速度缓慢，经验上讲，学习率开始时应该较大以保证收敛速度，快到最优点时需要较小的学习率。因此采用学习率衰减的原则，初始学习率为<script type="math/tex">\alpha_0</script> ,第t次迭代时学习率为<script type="math/tex">\alpha_t</script> :</p>
+<p>反时衰减：        <script type="math/tex">\alpha_t =\alpha_0 \frac{1}{1+\beta t}</script></p>
+<p>指数衰减：        <script type="math/tex">\alpha_t =\alpha_0 \beta^t</script></p>
+<p>自然指数衰减：<script type="math/tex">\alpha_t =\alpha_0 exp(-\beta t)</script></p>
+<p>AdaGrad（Adaptive Gradient）:  <script type="math/tex">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t</script> 其中<script type="math/tex">\Delta \theta_t=\theta_t-\theta_{t-1}   ,  G_t =\sum_{\tau=1}^{t}g_\tau*g_\tau</script>  是第<script type="math/tex">\tau</script> 次迭代时的梯度，对于小批量梯度下降法为利用小批量样本计算出的梯度。</p>
+<p>特点： 如果某个参数的偏导数累计比较大，则学习率相对较小，整体上来说，随着迭代次数的增加，学习率逐渐减小；经过一定次数迭代之后依然没有收敛，但是此时学习率已经很小，可能出现学习率可能过早衰减的情况。</p>
+<p>RMSprop（Root Mean Square Prop)：</p>
+<script type="math/tex; mode=display">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t $$  , 其中$$G_t=\beta G_{t-1}+(1-\beta)g_t *g_t$$,$$\beta$$一般取0.9
+
+计算累计梯度时，越靠近t时的梯度贡献越大，越远离t时的梯度贡献越小。
+
+AdaDelta（Adaptive Delta）：
+
+$\Delta x_{t-1}^2=\beta \Delta x_{t-2}^2+(1-\beta)\Delta \theta_{t-1}*\Delta \theta_{t-1}$
+
+$\Delta \theta_t=-\frac{\sqrt{\Delta x_{t-1}^2 +\epsilon}}{\sqrt{G_t +\epsilon}}g_t $
+
+AdaDelta算法将RMSprop算法中的固定$$\alpha$$改为动态计算的$$\sqrt{\Delta x_{t-1}^2}$$,可以在一定程度上抑制学习率的波动。
+
+**1.2.1 ** **动量法：（改变梯度）**
+
+以上是改变学习率，但是移动的方向还是当前一步的负梯度，但是动量法是改变移动的方向。
+
+利用最近一段时间内的平均梯度来代替当前时刻的梯度作为参数更新的方向。
+
+$\Delta \theta_t =\rho \Delta \theta_{t-1}-\alpha g_t=\rho(\rho \Delta \theta_{t-2}-\alpha g_{g_{t-1}})-\alpha g_t =...=\rho ^k \Delta \theta_{t-k}-\alpha(g_t+\rho g_{t-1}+...+\rho^{k-1 }g_{t-k+1})$
+
+其中$$\rho$$为动量因子,$$\alpha$$通常为0.9， 为学习率。学习率不变，改变参数更新的方向，由原来的$$g_t$$变为最近一段时间内梯度的加权平均。
+
+特点： 当某个参数在最近一段时间内梯度方向一致时，其真实的参数更新幅度会变大。迭代初期可以起到很好的加速作用，迭代后期在局部最小值来回振荡时，会减小增幅，抑制振荡。
+
+![moment](神经网络优化及解决异或问题/moment.png)
+
+**1.2.2   ** **Nesterov** **加速梯度算法（Nesterov Accelerated Gradient,NAG常用）:**
+
+相比于动量法，NAG直接先走到梯度改变后的地方，然后再根据那里的梯度再前进一下，如图所示：
+
+![Nesterov](神经网络优化及解决异或问题/Nesterov.png)
+
+**1.3AdaM(Adaptive Moment) ** **：（学习率+梯度，常用）**
+
+可以看作动量法和RMSprop的结合，不但使用动量来更新方向，还利用自适应学习率。
+
+​        $$M_t =\beta _1 M_{t-1}+(1-\beta_1)g_t$$                                               相当于梯度的均值（一阶矩）
+
+​         $$G_t=\beta_2 G_{t-1}+(1-\beta_2)g_t *g_t$$                                        相当于梯度的方差（二阶矩）
+
+​         $$\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}M_t$$                                                             $$\alpha$$ 取0.001,$$\beta_1$$ 取0.9,$$\beta_2$$取0.99
+
+但是在迭代初期， 会与真实值之间存在偏差，进行偏差修正：
+
+​         $\hat M_t =\frac{M_t}{1-\beta_1^t} $                     $ \hat G_t=\frac{G_t}{1-\beta_2^t}$                $\Delta \theta_t=-\frac{\alpha}{\sqrt{\hat G_t+\epsilon}}\hat M_t$
+
+**1.4 ** **梯度截断（GradientClipping）：**
+
+在使用梯度下降法来进行参数学习时，有时梯度会突然增大，为了防止梯度爆炸，要进行梯度截断
+
+​按值截断： $$g_t=\left\{\begin{aligned}a &  & ||g_t||<a  \\ b &  & ||g_t||>b \\g_t &  & a \leq||g_t||\leq b \end{aligned}\right.$$                      a，b为超参数
+
+按模截断： $$g_t=\left\{\begin{aligned}g_t &  & ||g_t||^2 \leq b \\\frac{b}{||g_t||}g_t  &  &  ||g_t||^2 > b \end{aligned}\right.$$                    b为超参数
+
+除了这些参数，神经网络中还存在许多超参数，比如网络层数；每层的神经元数量；小批量下降法中每次选取的样本数量，对于这些超参数，一般利用网格搜索，或者使用经验值。
+
+几种方法的效率如图:
+
+
+
+<img src="http://img.blog.csdn.net/20160824161755284" width="340px" />
+
+
+
+#### 2 .**参数初始化**
+
+非凸问题中初始化参数尤其重要，在感知器和logistic回归中，一般将参数全部初始化为0，但是这对于神经网络是错误的做法。如果参数全部初始化为0，则第一个隐藏层的激活值全为0，会导致神经元没有区分性，要采用随机初始化。原则：一个神经元上连接的输入较多，则每个输入的权重就要相对小一些，否则会导致输出过大（ReLU）或过饱和（sigmoid）。
+
+**2.1Gaussion** **分布初始化：**
+
+初始化的参数来源于固定均值和固定方差的正态分布。     $$\theta_0 \sim N(0,\sqrt{\frac{1}{n^{l-1}}})</script><p>​                      </p>
+<p>​                              <script type="math/tex">n^{l-1}</script>个神经元            <script type="math/tex">n^l</script>个神经元，未激活的输出值为z，经激活后为a</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/shenjingyuan.png" alt="shenjingyuan"></p>
+<p>对于隐藏层的任意一个神经元<script type="math/tex">z^l</script>,<script type="math/tex">z^l =\sum_{i=1}^{n^{l-1}}w_i^l a_i^{l-1}</script> ,假设<script type="math/tex">w_i^l</script> 和<script type="math/tex">a_i^l</script> 相互独立且均值均为0,则 <script type="math/tex">E(z^l)=0,var(z^l)=n^{l-1}var(w_i^l)var(a_i^{l-1})</script>,我们希望输入值<script type="math/tex">a_i^{l-1}</script>和输出值$a_i^l$方差一致，即经过隐藏层作用之后方差不变，则:</p>
+<p>$n^{l-1}var(w_i^l)=1 \Rightarrow var(w_i^l)=\frac{1}{n^{l-1}}$</p>
+<p>如果即考虑输入层又考虑输出层，则初始化分布为 <script type="math/tex">\theta_0 \sim N(0,\sqrt{\frac{2}{n^{l-1}+n^{l+1}}})</script> </p>
+<p><strong>2.2</strong> <strong>均匀分布初始化</strong></p>
+<p>初始化来源于均匀分布 $\theta_0 \sim U(-r,r)$</p>
+<p>采取方差不变原则，$\frac{1}{n^{l-1}}=\frac{(2r)^2}{12}   \Rightarrow r=\sqrt{\frac{3}{n^{l-1}}}$ or $r=\sqrt{\frac{6}{n^{l-1}+n^{l+1}}}$</p>
+<p><strong>3.</strong> <strong>归一化（去除量纲影响）</strong></p>
+<p>不同的输入$x^i$可能单位不同或者量纲不同如身高和体重，没办法比较，因此要将输入进行归一化</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/guiyihua.png" alt="guiyihua"></p>
+<p>如图，数据归一化之后能加快收敛速度。</p>
+<p><strong>3.1</strong> <strong>标准归一化</strong></p>
+<p>假设m个样本$x^1,…,x^m$,每个数据都减去样本均值，并除以样本标准差：</p>
+<p>$\mu =\frac{1}{m} \sum_{i=1}^{m} x^i$</p>
+<p>$\sigma ^2=\frac{1}{m} \sum_{i=1}^{m} (x^i-\mu)^2$</p>
+<p>$\hat {x^i}=\frac{x^i-\mu}{\sigma}$</p>
+<p>经过标准归一化之后，每一维特征都服从标准正态分布。</p>
+<p><strong>3.2</strong> <strong>缩放归一化</strong></p>
+<p>$\hat {x^i}=\frac{x^i-x^i_min}{x^i_max-x^i_min}$</p>
+<p>经过缩放归一化之后，每个输入都介于0-1之间</p>
+<p><strong>3.3</strong> <strong>白化</strong></p>
+<p>去除各个维度之间的相关性，比如用主成分分析法</p>
+<p><strong>3.4</strong> <strong>批量归一化</strong></p>
+<p>协变量偏移： 一般的机器学习要求输入变量和输出变量服从相同的分布，但是对于神经网络，参数更新之前和更新之后可能存在很大的差异，我们把在训练期间由于网络参数的变化而造成的网络激活函数输出值分布的变化定义为内部协变量转移，解决办法：批量归一化：通过对每一层的输入值进行归一化来保持其分布稳定。</p>
+<p>一般采用标准归一化，归一化之后集中到0附近，正好在sigmoid函数的线性部分，但是可能丢失神经网络的非线性处理能力；</p>
+<p>还可以通过一个附加的缩放和平移来改变取值区间：  <script type="math/tex">\hat {x^i} =a \hat{x^i}+b</script></p>
+<h3 id="python实现异或问题"><a href="#python实现异或问题" class="headerlink" title="python实现异或问题"></a>python实现异或问题</h3><p>用神经网络实现异或问题+一些优化方法的应用</p>
+<p>问题描述：经典的异或问题</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/yihuo.png" alt="yihuo"></p>
+<p>这里最终的预测损失函数为：</p>
+<p>$J=\frac{1}{m} \sum_{i=1}^{m}(-y^i <em>ln(\hat y^i)-(1-y^i)</em>ln(1-\hat y^i))$</p>
+<p>建立如下的三层神经网络解决异或问题，x值为([0,0],[0,1],[1,0],[1,1]),y值为([0,1,1,0])，优化时利用了高斯分布初始化，变量归一化，梯度截断和学习率递减。</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/sanceng.png" width="500px"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">##加载需要的module</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">#激活函数，采取sigmoid函数，也可以采用ReLU函数</span><br><span class="line">def sigmoid(x):</span><br><span class="line">   return 1/(1+np.exp(-x))</span><br><span class="line">#激活函数的导数，sigmoid函数的导数计算相对简单</span><br><span class="line">def s_prime(z):</span><br><span class="line">   return np.multiply(z,1.0-z)   </span><br><span class="line">#对每一层的全部参数进行初始化，系数全部初始化为0</span><br><span class="line">def init_weights_zeros(layers):</span><br><span class="line">  weights = []</span><br><span class="line">  for i in range(len(layers)-1):</span><br><span class="line">    w = np.zeros([layers[i+1], layers[i]+1])</span><br><span class="line">    #w = w * 2*epsilon - epsilon</span><br><span class="line">    weights.append(np.mat(w))</span><br><span class="line">  return weights</span><br><span class="line">#采取高斯分布初始化，输入每层神经元的个数，输出初始化的值</span><br><span class="line">def init_weights(layers):</span><br><span class="line">   weights = []</span><br><span class="line">   for i in range(len(layers)-1):</span><br><span class="line">     w=np.random.normal(0,(1/layers[i])**0.5,size=[layers[i+1], layers[i]+1])</span><br><span class="line">     weights.append(np.mat(w))</span><br><span class="line">   return weights</span><br><span class="line">#拟合函数，采取BP算法，先前向计算，后后向训练</span><br><span class="line">def fit(X,Y,w):</span><br><span class="line">  #用来存放参数的值</span><br><span class="line">  w_grad=([np.mat(np.zeros(np.shape(w[i])))</span><br><span class="line">             for i in range(len(w))]) </span><br><span class="line">  m,n = X.shape             #m为样本数，n为变量数</span><br><span class="line">  y_pre=np.zeros((m,1))     #存放预测值，列向量，得到的概率</span><br><span class="line">  for i in range(m):        #对每个样本进行如下计算 </span><br><span class="line">    x = X[i]                #x为第i个样本</span><br><span class="line">    y = Y[0,i]              #y为第i个样本对应的真实值</span><br><span class="line">    #向前计算</span><br><span class="line">    a = x                   #未激活为z，激活为a，作为下一个输入</span><br><span class="line">    a_s = []                #a_s存储全部的样本值</span><br><span class="line">    #此循环进行向前计算，直到最后输出层</span><br><span class="line">    for j in range(len(w)): #要append 1，为了加截距项</span><br><span class="line">      a = np.mat(np.append(1,a)).T</span><br><span class="line">      a_s.append(a)  </span><br><span class="line">      z = w[j] * a        #未激活的为z</span><br><span class="line">      a = sigmoid(z)      #激活后的为a</span><br><span class="line">    y_pre[i,0]=a           #将输出值放入对应位置</span><br><span class="line">    #后向训练</span><br><span class="line">    delta=a-y.T             #最后一层的误差项</span><br><span class="line">    w_grad[-1] += delta * a_s[-1].T  # L-1层的梯度</span><br><span class="line">    # 倒过来，从倒数第二层开始到第二层结束，不包括第一层和最后一层，计算每一层的梯度</span><br><span class="line">    for j in reversed(range(1,len(w))):</span><br><span class="line">      delta=np.multiply(w[j].T*delta,s_prime(a_s[j])) </span><br><span class="line">      grad=delta[1:] * a_s[j-1].T</span><br><span class="line">      for gr in range(grad.shape[0]):</span><br><span class="line">        if abs(np.sum(grad[gr]))&lt;0.0000001:</span><br><span class="line">          grad[gr]=np.sign(grad[gr])*0.0000001</span><br><span class="line">        elif abs(np.sum(grad[gr]))&gt;100000:</span><br><span class="line">          grad[gr]=np.sign(grad[gr])*100000</span><br><span class="line">      w_grad[j-1]+=grad</span><br><span class="line">  #损失函数</span><br><span class="line">  J = (1.0 / m) * np.sum(-Y * np.log(y_pre) - (np.array([[1]]) - Y) * np.log(1 - y_pre))</span><br><span class="line">  #返回梯度，损失函数和y的预测值</span><br><span class="line">  return &#123;&apos;w_grad&apos;: w_grad, &apos;J&apos;: J, &apos;h&apos;: y_pre&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">X_original=np.mat([[0,0],[0,1],[1,0],[1,1]])</span><br><span class="line">#将数据进行归一化处理,采用标准归一化</span><br><span class="line">X=np.mat(np.zeros(X_original.shape))</span><br><span class="line">for i in range(X_original.shape[1]):</span><br><span class="line">  X[:,i]=(X_original[:,i]-X_original[:,i].mean())/X_original[:,i].var()**0.5</span><br><span class="line">Y=np.mat([0,1,1,0])</span><br><span class="line">layers = [2,2,1]            #输入层2个神经元，隐藏层2个神经元，输出1个神经元</span><br><span class="line">epochs = 10000              #迭代次数</span><br><span class="line">alpha_0= 0.2                #学习率</span><br><span class="line">beta =  0.5               #利用指数衰减的学习率                  </span><br><span class="line">w=init_weights(layers)      #首先将全部参数进行初始化</span><br><span class="line">result = &#123;&apos;J&apos;: [], &apos;h&apos;: []&#125; #存放损失值和预测值</span><br><span class="line">w_s = &#123;&#125;                    #存放参数</span><br><span class="line">#对每次迭代进行以下操作</span><br><span class="line">for i in range(epochs):</span><br><span class="line">  fit_result = fit(X, Y, w)</span><br><span class="line">  w_grad = fit_result.get(&apos;w_grad&apos;) #每次迭代之后的梯度</span><br><span class="line">  J = fit_result.get(&apos;J&apos;)           #获取损失函数，每次迭代之后的损失值</span><br><span class="line">  h_current = fit_result.get(&apos;h&apos;)   #每次迭代之后的预测值</span><br><span class="line">  result[&apos;J&apos;].append(J)             #连接起来</span><br><span class="line">  result[&apos;h&apos;].append(h_current)</span><br><span class="line">  for j in range(len(w)):</span><br><span class="line">    alpha=alpha_0*beta**i          </span><br><span class="line">    w[j] -= alpha_0 * w_grad[j]      #参数改变</span><br><span class="line">    if i == 0 or i == (epochs - 1):</span><br><span class="line">      w_s[&apos;w_&apos; + str(i)] = w_grad[:]</span><br><span class="line"></span><br><span class="line">##画出损失函数的变化</span><br><span class="line">plt.plot(result.get(&apos;J&apos;))</span><br><span class="line">plt.show()</span><br><span class="line">#输出开始时的参数值和最终的梯度值</span><br><span class="line">print(w_s)</span><br><span class="line">#输出y的预测值,第一次迭代和最后一次迭代的预测值</span><br><span class="line">print(result.get(&apos;h&apos;)[0], result.get(&apos;h&apos;)[-1])</span><br></pre></td></tr></table></figure>
+<p>将全部参数全部初始化为0，输出结果如下：</p>
+<p>各个变量的预测y为（0.5，0.5，0.5，0.5），损失J与迭代次数的关系为：</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/init_0.png" alt="initial"></p>
+<p>将全部参数进行高斯初始化，输出结果如下：</p>
+<p>各个变量的预测y为（0.001,0.999,0.999,0.001），损失J与迭代次数的关系为：</p>
+<p><img src="/2018/02/23/神经网络优化及解决异或问题/init_gaussion.png" alt="initial1"></p>
+<p>由以上两幅图可以看出：</p>
+<ul>
+<li>不能将全部参数初始化为0，要进行随机初始化</li>
+</ul>
+<ul>
+<li>三层的神经网络可以很好的解决异或问题</li>
+<li>随着迭代次数的增加，最终的损失逐渐减小，且在1000次左右时损失达到最小，收敛速度很快。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/04/高斯判别分析及其python实现/" rel="next" title="高斯判别分析及其python实现">
+                <i class="fa fa-chevron-left"></i> 高斯判别分析及其python实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Lisa</p>
+              <p class="site-description motion-element" itemprop="description">这是一个统计菜鸟慢慢飞成大神的博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络的几种求解办法"><span class="nav-number">1.</span> <span class="nav-text">神经网络的几种求解办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降法（Batch-Gradient-Descent-BGD）"><span class="nav-number">1.1.</span> <span class="nav-text">梯度下降法（Batch Gradient Descent,BGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降法（Stochastic-Gradient-Descent-SGD）"><span class="nav-number">1.2.</span> <span class="nav-text">随机梯度下降法（Stochastic Gradient Descent, SGD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）"><span class="nav-number">1.3.</span> <span class="nav-text">小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化问题产生原因"><span class="nav-number">2.</span> <span class="nav-text">优化问题产生原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应对方法"><span class="nav-number">3.</span> <span class="nav-text">应对方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-训练方法改进"><span class="nav-number">3.1.</span> <span class="nav-text">1.训练方法改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python实现异或问题"><span class="nav-number">4.</span> <span class="nav-text">python实现异或问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lisa</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
