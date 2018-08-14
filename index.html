@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -190,6 +190,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -218,6 +228,660 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/01/排序算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/01/排序算法/" itemprop="url">排序算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T21:33:29+08:00">
+                2018-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          简介：本文主要用python实现各种排序算法，包括插入排序，归并排序；快速排序和选择排序
+
+插入排序
+
+​       思路：每次选择i后面的一个元素，即i+1个位置的元素，将i+1插入到前面序列的正确位置
+​    时间复杂度：n**2
+​    稳定性：稳定
+1234567def insert_sort(alist):    for i in range(len(alist) - 1 ):  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/01/排序算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/07/03/最大索引堆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/03/最大索引堆/" itemprop="url">最大索引堆</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T23:44:19+08:00">
+                2018-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最大索引堆
+简介：本文主要实现一个最大索引堆，最大索引堆的意义：当堆中的元素很复杂如每个堆中的元素是一篇文档，交换堆中的元素变得复杂，改为交换堆的index
+
+实现一个最大索引堆
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/03/最大索引堆/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/06/03/最大堆的实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/03/最大堆的实现/" itemprop="url">最大堆的实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T20:23:11+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最大堆的实现
+最大堆简介：根节点的关键字是堆里所有结点关键字中最大者，称为大根堆，又称最大堆。大根堆要求根节点的关键字既大于或等于左子树的关键字值，又大于或等于右子树的关键字值。
+性质：
+
+堆是一棵完全二叉树
+最大堆的任一子树也是最大堆
+
+简介：本文主要实现最大堆以及最大堆的一些基本功能，包括插入元素(插入之后仍为最大堆)，删除元素(删除之后仍保证为最大堆)
+
+定义一个最大堆
+
+123456789
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/03/最大堆的实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/03/01/爬取知乎live并探讨影响参与人数的因素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/01/爬取知乎live并探讨影响参与人数的因素/" itemprop="url">爬取知乎live并探讨影响参与人数的因素</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T18:20:18+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ​      
+近几年，知乎发展迅速，越来越多的人会在业余时间刷知乎。短短几年时间，知乎已从当年的问答社区变为如今每个人必备APP，截止到2017 年2 月，知乎已经拥有6900 万注册用户。2016 年是知识付费的元年，知乎也搭上了知识付费的列车—知乎live，各个类型的live 层出不穷，一种在线问答平台由此诞生。但是不同live 的参与人数差别很大，有些知乎live 人山人海，有些live 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/01/爬取知乎live并探讨影响参与人数的因素/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/28/logistic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/logistic/" itemprop="url">logistic</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T22:01:35+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/28/logistic/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -303,130 +967,19 @@
       
         
           
-            <h3 id="神经网络的几种求解办法"><a href="#神经网络的几种求解办法" class="headerlink" title="神经网络的几种求解办法"></a>神经网络的几种求解办法</h3><p>考虑任意一层神经网络（样本数为m，变量数为n）：</p>
-<p>拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $</p>
-<p>目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$</p>
-<p>为了使<script type="math/tex">J(\theta)</script>达到最小，一般采用如下方法来训练参数。</p>
-<h4 id="梯度下降法（Batch-Gradient-Descent-BGD）"><a href="#梯度下降法（Batch-Gradient-Descent-BGD）" class="headerlink" title="梯度下降法（Batch Gradient Descent,BGD）"></a>梯度下降法（Batch Gradient Descent,BGD）</h4><p>在更新每一个参数时都采用全部的样本m：</p>
-<p>$\frac{\partial J(\theta)}{\partial \theta_j}=-\frac{1}{m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))x_j^i$</p>
-<p>伪代码如下：</p>
-<p>Repeat{<script type="math/tex">\theta_j =\theta _j+\alpha\frac{1}{m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}</p>
-<p>特点： 每次更新使用全部的样本，得到的解是全局最优解且易于并行实现；但是当样本数目很大时，训练过程很慢。</p>
-<h4 id="随机梯度下降法（Stochastic-Gradient-Descent-SGD）"><a href="#随机梯度下降法（Stochastic-Gradient-Descent-SGD）" class="headerlink" title="随机梯度下降法（Stochastic Gradient Descent, SGD）"></a>随机梯度下降法（Stochastic Gradient Descent, SGD）</h4><p>每次选取一个样本来更新所有参数，伪代码如下：</p>
-<p>Repeat{for i=1,..m{</p>
-<p>​                                 <script type="math/tex">\theta_j =\theta _j+\alpha(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}}</p>
-<p>特点： 训练速度较快；得到的可能是局部最优解且不易于并行实现</p>
-<h4 id="小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）"><a href="#小批量梯度下降法（Mini-Batch-Gradient-Descent-MBGD）" class="headerlink" title="小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）"></a>小批量梯度下降法（Mini-Batch Gradient Descent, MBGD）</h4><p>在上面两种方法中取折衷，每次用b（通常b=10）个样本来更新参数，假设m=1000，伪代码如下：</p>
-<p>Repeat{for k=1,11,21,..991{</p>
-<p>​                                                <script type="math/tex">\theta_j =\theta _j+\alpha\frac{1}{10}\sum_{i=k}^{k+9}(y^i-h_\theta(x^i))x_j^i</script>  for j =1,2,…n}}</p>
-<p>特点： 训练速度较快且不容易陷入局部最优陷阱。</p>
-<p><em>选择原则：</em> 如果样本量比较小，采用批量梯度下降法，样本数特别大，采用随机梯度下降法，多数情况采用小批量梯度下降法。</p>
-<h3 id="优化问题产生原因"><a href="#优化问题产生原因" class="headerlink" title="优化问题产生原因"></a>优化问题产生原因</h3><ol>
-<li>参数太多，每一层都有很多参数，计算量会迅速增加，收敛速度得到限制；</li>
-<li>非凸问题，K层神经网络（如k=2）的风险函数本质是一个多元k次函数  <script type="math/tex">f(x,y)=xy</script> ,是一个非凸函数。对于凸函数，局部最优解就是全局最优解。对于非凸函数，会有很多局部最优解。如图：</li>
-</ol>
-<p>​                                                      <img src="/2018/02/23/神经网络优化及解决异或问题/tuhanshu.png" alt="凸函数"> </p>
-<p>对于凸函数来说，无论从哪一点出发，均能达到局部最优点，且局部最优点就是全局最优点</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/feitu.png" width="380px"></p>
-<p> 对于非凸函数，局部局部最优解与全局最优解不同，且鞍点情况下，很容易陷入局部最优解。</p>
-<p>   3.梯度消失或梯度爆炸。</p>
-<h3 id="应对方法"><a href="#应对方法" class="headerlink" title="应对方法"></a>应对方法</h3><p>训练方法改进；参数初始化；变量归一化</p>
-<h4 id="1-训练方法改进"><a href="#1-训练方法改进" class="headerlink" title="1.训练方法改进"></a>1.训练方法改进</h4><p>​                                                $\theta_j=\theta_j+\alpha\frac{1}{10}\sum_{i=k}^{k+9}(y^i-h_\theta(x^i))x_j^i$                                          </p>
-<p>为了更有效的训练神经网络，在梯度下降法中需要使用以下技巧加快优化速度，主要是以下两个方面：学习率衰减和动量法</p>
-<p><strong>1.1 </strong> <strong>学习率衰减：（改变学习率）</strong> </p>
-<p>学习率<script type="math/tex">\alpha</script>的选择至关重要，过大会导致不收敛，过小会导致收敛速度缓慢，经验上讲，学习率开始时应该较大以保证收敛速度，快到最优点时需要较小的学习率。因此采用学习率衰减的原则，初始学习率为<script type="math/tex">\alpha_0</script> ,第t次迭代时学习率为<script type="math/tex">\alpha_t</script> :</p>
-<p>反时衰减：        <script type="math/tex">\alpha_t =\alpha_0 \frac{1}{1+\beta t}</script></p>
-<p>指数衰减：        <script type="math/tex">\alpha_t =\alpha_0 \beta^t</script></p>
-<p>自然指数衰减：<script type="math/tex">\alpha_t =\alpha_0 exp(-\beta t)</script></p>
-<p>AdaGrad（Adaptive Gradient）:  <script type="math/tex">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t</script> 其中<script type="math/tex">\Delta \theta_t=\theta_t-\theta_{t-1}   ,  G_t =\sum_{\tau=1}^{t}g_\tau*g_\tau</script>  是第<script type="math/tex">\tau</script> 次迭代时的梯度，对于小批量梯度下降法为利用小批量样本计算出的梯度。</p>
-<p>特点： 如果某个参数的偏导数累计比较大，则学习率相对较小，整体上来说，随着迭代次数的增加，学习率逐渐减小；经过一定次数迭代之后依然没有收敛，但是此时学习率已经很小，可能出现学习率可能过早衰减的情况。</p>
-<p>RMSprop（Root Mean Square Prop)：</p>
-<p>$\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}g_t $</p>
-<p> 其中<script type="math/tex">G_t=\beta G_{t-1}+(1-\beta)g_t *g_t</script>,<script type="math/tex">\beta</script>一般取0.9</p>
-<p>计算累计梯度时，越靠近t时的梯度贡献越大，越远离t时的梯度贡献越小。</p>
-<p>AdaDelta（Adaptive Delta）：</p>
-<p>$\Delta x_{t-1}^2=\beta \Delta x_{t-2}^2+(1-\beta)\Delta \theta_{t-1}*\Delta \theta_{t-1}$</p>
-<p>$\Delta \theta_t=-\frac{\sqrt{\Delta x_{t-1}^2 +\epsilon}}{\sqrt{G_t +\epsilon}}g_t $</p>
-<p>AdaDelta算法将RMSprop算法中的固定<script type="math/tex">\alpha</script>改为动态计算的<script type="math/tex">\sqrt{\Delta x_{t-1}^2}</script>,可以在一定程度上抑制学习率的波动。</p>
-<p><strong>1.2.1 </strong> <strong>动量法：（改变梯度）</strong></p>
-<p>以上是改变学习率，但是移动的方向还是当前一步的负梯度，但是动量法是改变移动的方向。</p>
-<p>利用最近一段时间内的平均梯度来代替当前时刻的梯度作为参数更新的方向。</p>
-<p>$\Delta \theta_t =\rho \Delta \theta_{t-1}-\alpha g_t=\rho(\rho \Delta \theta_{t-2}-\alpha g_{g_{t-1}})-\alpha g_t =…=\rho ^k \Delta \theta_{t-k}-\alpha(g_t+\rho g_{t-1}+…+\rho^{k-1 }g_{t-k+1})$</p>
-<p>其中<script type="math/tex">\rho</script>为动量因子,<script type="math/tex">\alpha</script>通常为0.9， 为学习率。学习率不变，改变参数更新的方向，由原来的<script type="math/tex">g_t</script>变为最近一段时间内梯度的加权平均。</p>
-<p>特点： 当某个参数在最近一段时间内梯度方向一致时，其真实的参数更新幅度会变大。迭代初期可以起到很好的加速作用，迭代后期在局部最小值来回振荡时，会减小增幅，抑制振荡。</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/moment.png" alt="moment"></p>
-<p><strong>1.2.2   </strong> <strong>Nesterov</strong> <strong>加速梯度算法（Nesterov Accelerated Gradient,NAG常用）:</strong></p>
-<p>相比于动量法，NAG直接先走到梯度改变后的地方，然后再根据那里的梯度再前进一下，如图所示：</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/Nesterov.png" alt="Nesterov"></p>
-<p><strong>1.3AdaM(Adaptive Moment) </strong> <strong>：（学习率+梯度，常用）</strong></p>
-<p>可以看作动量法和RMSprop的结合，不但使用动量来更新方向，还利用自适应学习率。</p>
-<p>​        <script type="math/tex">M_t =\beta _1 M_{t-1}+(1-\beta_1)g_t</script>                                               相当于梯度的均值（一阶矩）</p>
-<p>​         <script type="math/tex">G_t=\beta_2 G_{t-1}+(1-\beta_2)g_t *g_t</script>                                        相当于梯度的方差（二阶矩）</p>
-<p>​         <script type="math/tex">\Delta \theta_t=-\frac{\alpha}{\sqrt{G_t +\epsilon}}M_t</script>                                                             <script type="math/tex">\alpha</script> 取0.001,<script type="math/tex">\beta_1</script> 取0.9,<script type="math/tex">\beta_2</script>取0.99</p>
-<p>但是在迭代初期， 会与真实值之间存在偏差，进行偏差修正：</p>
-<p>​         $\hat M_t =\frac{M_t}{1-\beta_1^t} $                     $ \hat G_t=\frac{G_t}{1-\beta_2^t}$                $\Delta \theta_t=-\frac{\alpha}{\sqrt{\hat G_t+\epsilon}}\hat M_t$</p>
-<p><strong>1.4 </strong> <strong>梯度截断（GradientClipping）：</strong></p>
-<p>在使用梯度下降法来进行参数学习时，有时梯度会突然增大，为了防止梯度爆炸，要进行梯度截断</p>
-<p>​按值截断： <script type="math/tex">g_t=\left\{\begin{aligned}a &  & ||g_t||<a  \\ b &  & ||g_t||>b \\g_t &  & a \leq||g_t||\leq b \end{aligned}\right.</script>                      a，b为超参数</p>
-<p>按模截断： <script type="math/tex">g_t=\left\{\begin{aligned}g_t &  & ||g_t||^2 \leq b \\\frac{b}{||g_t||}g_t  &  &  ||g_t||^2 > b \end{aligned}\right.</script>                    b为超参数</p>
-<p>除了这些参数，神经网络中还存在许多超参数，比如网络层数；每层的神经元数量；小批量下降法中每次选取的样本数量，对于这些超参数，一般利用网格搜索，或者使用经验值。</p>
-<p>几种方法的效率如图:</p>
-<p><img src="http://img.blog.csdn.net/20160824161755284" width="340px"></p>
-<h4 id="2-参数初始化"><a href="#2-参数初始化" class="headerlink" title="2 .参数初始化"></a>2 .<strong>参数初始化</strong></h4><p>非凸问题中初始化参数尤其重要，在感知器和logistic回归中，一般将参数全部初始化为0，但是这对于神经网络是错误的做法。如果参数全部初始化为0，则第一个隐藏层的激活值全为0，会导致神经元没有区分性，要采用随机初始化。原则：一个神经元上连接的输入较多，则每个输入的权重就要相对小一些，否则会导致输出过大（ReLU）或过饱和（sigmoid）。</p>
-<p><strong>2.1Gaussion</strong> <strong>分布初始化：</strong></p>
-<p>初始化的参数来源于固定均值和固定方差的正态分布。     <script type="math/tex">\theta_0 \sim N(0,\sqrt{\frac{1}{n^{l-1}}})</script> </p>
-<p>​                      </p>
-<p>​                              <script type="math/tex">n^{l-1}</script>个神经元            <script type="math/tex">n^l</script>个神经元，未激活的输出值为z，经激活后为a</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/shenjingyuan.png" alt="shenjingyuan"></p>
-<p>对于隐藏层的任意一个神经元<script type="math/tex">z^l</script>,<script type="math/tex">z^l =\sum_{i=1}^{n^{l-1}}w_i^l a_i^{l-1}</script> ,假设<script type="math/tex">w_i^l</script> 和<script type="math/tex">a_i^l</script> 相互独立且均值均为0,则 <script type="math/tex">E(z^l)=0,var(z^l)=n^{l-1}var(w_i^l)var(a_i^{l-1})</script>,我们希望输入值<script type="math/tex">a_i^{l-1}</script>和输出值$a_i^l$方差一致，即经过隐藏层作用之后方差不变，则:</p>
-<p>$n^{l-1}var(w_i^l)=1 \Rightarrow var(w_i^l)=\frac{1}{n^{l-1}}$</p>
-<p>如果即考虑输入层又考虑输出层，则初始化分布为 <script type="math/tex">\theta_0 \sim N(0,\sqrt{\frac{2}{n^{l-1}+n^{l+1}}})</script> </p>
-<p><strong>2.2</strong> <strong>均匀分布初始化</strong></p>
-<p>初始化来源于均匀分布 $\theta_0 \sim U(-r,r)$</p>
-<p>采取方差不变原则，$\frac{1}{n^{l-1}}=\frac{(2r)^2}{12}   \Rightarrow r=\sqrt{\frac{3}{n^{l-1}}}$ or $r=\sqrt{\frac{6}{n^{l-1}+n^{l+1}}}$</p>
-<p><strong>3.</strong> <strong>归一化（去除量纲影响）</strong></p>
-<p>不同的输入$x^i$可能单位不同或者量纲不同如身高和体重，没办法比较，因此要将输入进行归一化</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/guiyihua.png" alt="guiyihua"></p>
-<p>如图，数据归一化之后能加快收敛速度。</p>
-<p><strong>3.1</strong> <strong>标准归一化</strong></p>
-<p>假设m个样本$x^1,…,x^m$,每个数据都减去样本均值，并除以样本标准差：</p>
-<p>$\mu =\frac{1}{m} \sum_{i=1}^{m} x^i$</p>
-<p>$\sigma ^2=\frac{1}{m} \sum_{i=1}^{m} (x^i-\mu)^2$</p>
-<p>$\hat {x^i}=\frac{x^i-\mu}{\sigma}$</p>
-<p>经过标准归一化之后，每一维特征都服从标准正态分布。</p>
-<p><strong>3.2</strong> <strong>缩放归一化</strong></p>
-<p>$\hat {x^i}=\frac{x^i-x^i_min}{x^i_max-x^i_min}$</p>
-<p>经过缩放归一化之后，每个输入都介于0-1之间</p>
-<p><strong>3.3</strong> <strong>白化</strong></p>
-<p>去除各个维度之间的相关性，比如用主成分分析法</p>
-<p><strong>3.4</strong> <strong>批量归一化</strong></p>
-<p>协变量偏移： 一般的机器学习要求输入变量和输出变量服从相同的分布，但是对于神经网络，参数更新之前和更新之后可能存在很大的差异，我们把在训练期间由于网络参数的变化而造成的网络激活函数输出值分布的变化定义为内部协变量转移，解决办法：批量归一化：通过对每一层的输入值进行归一化来保持其分布稳定。</p>
-<p>一般采用标准归一化，归一化之后集中到0附近，正好在sigmoid函数的线性部分，但是可能丢失神经网络的非线性处理能力；</p>
-<p>还可以通过一个附加的缩放和平移来改变取值区间：  <script type="math/tex">\hat {x^i} =a \hat{x^i}+b</script></p>
-<h3 id="python实现异或问题"><a href="#python实现异或问题" class="headerlink" title="python实现异或问题"></a>python实现异或问题</h3><p>用神经网络实现异或问题+一些优化方法的应用</p>
-<p>问题描述：经典的异或问题</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/yihuo.png" alt="yihuo"></p>
-<p>这里最终的预测损失函数为：</p>
-<p>$J=\frac{1}{m} \sum_{i=1}^{m}(-y^i <em>ln(\hat y^i)-(1-y^i)</em>ln(1-\hat y^i))$</p>
-<p>建立如下的三层神经网络解决异或问题，x值为([0,0],[0,1],[1,0],[1,1]),y值为([0,1,1,0])，优化时利用了高斯分布初始化，变量归一化，梯度截断和学习率递减。</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/sanceng.png" width="500px"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">##加载需要的module</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">#激活函数，采取sigmoid函数，也可以采用ReLU函数</span><br><span class="line">def sigmoid(x):</span><br><span class="line">   return 1/(1+np.exp(-x))</span><br><span class="line">#激活函数的导数，sigmoid函数的导数计算相对简单</span><br><span class="line">def s_prime(z):</span><br><span class="line">   return np.multiply(z,1.0-z)   </span><br><span class="line">#对每一层的全部参数进行初始化，系数全部初始化为0</span><br><span class="line">def init_weights_zeros(layers):</span><br><span class="line">  weights = []</span><br><span class="line">  for i in range(len(layers)-1):</span><br><span class="line">    w = np.zeros([layers[i+1], layers[i]+1])</span><br><span class="line">    #w = w * 2*epsilon - epsilon</span><br><span class="line">    weights.append(np.mat(w))</span><br><span class="line">  return weights</span><br><span class="line">#采取高斯分布初始化，输入每层神经元的个数，输出初始化的值</span><br><span class="line">def init_weights(layers):</span><br><span class="line">   weights = []</span><br><span class="line">   for i in range(len(layers)-1):</span><br><span class="line">     w=np.random.normal(0,(1/layers[i])**0.5,size=[layers[i+1], layers[i]+1])</span><br><span class="line">     weights.append(np.mat(w))</span><br><span class="line">   return weights</span><br><span class="line">#拟合函数，采取BP算法，先前向计算，后后向训练</span><br><span class="line">def fit(X,Y,w):</span><br><span class="line">  #用来存放参数的值</span><br><span class="line">  w_grad=([np.mat(np.zeros(np.shape(w[i])))</span><br><span class="line">             for i in range(len(w))]) </span><br><span class="line">  m,n = X.shape             #m为样本数，n为变量数</span><br><span class="line">  y_pre=np.zeros((m,1))     #存放预测值，列向量，得到的概率</span><br><span class="line">  for i in range(m):        #对每个样本进行如下计算 </span><br><span class="line">    x = X[i]                #x为第i个样本</span><br><span class="line">    y = Y[0,i]              #y为第i个样本对应的真实值</span><br><span class="line">    #向前计算</span><br><span class="line">    a = x                   #未激活为z，激活为a，作为下一个输入</span><br><span class="line">    a_s = []                #a_s存储全部的样本值</span><br><span class="line">    #此循环进行向前计算，直到最后输出层</span><br><span class="line">    for j in range(len(w)): #要append 1，为了加截距项</span><br><span class="line">      a = np.mat(np.append(1,a)).T</span><br><span class="line">      a_s.append(a)  </span><br><span class="line">      z = w[j] * a        #未激活的为z</span><br><span class="line">      a = sigmoid(z)      #激活后的为a</span><br><span class="line">    y_pre[i,0]=a           #将输出值放入对应位置</span><br><span class="line">    #后向训练</span><br><span class="line">    delta=a-y.T             #最后一层的误差项</span><br><span class="line">    w_grad[-1] += delta * a_s[-1].T  # L-1层的梯度</span><br><span class="line">    # 倒过来，从倒数第二层开始到第二层结束，不包括第一层和最后一层，计算每一层的梯度</span><br><span class="line">    for j in reversed(range(1,len(w))):</span><br><span class="line">      delta=np.multiply(w[j].T*delta,s_prime(a_s[j])) </span><br><span class="line">      grad=delta[1:] * a_s[j-1].T</span><br><span class="line">      for gr in range(grad.shape[0]):</span><br><span class="line">        if abs(np.sum(grad[gr]))&lt;0.0000001:</span><br><span class="line">          grad[gr]=np.sign(grad[gr])*0.0000001</span><br><span class="line">        elif abs(np.sum(grad[gr]))&gt;100000:</span><br><span class="line">          grad[gr]=np.sign(grad[gr])*100000</span><br><span class="line">      w_grad[j-1]+=grad</span><br><span class="line">  #损失函数</span><br><span class="line">  J = (1.0 / m) * np.sum(-Y * np.log(y_pre) - (np.array([[1]]) - Y) * np.log(1 - y_pre))</span><br><span class="line">  #返回梯度，损失函数和y的预测值</span><br><span class="line">  return &#123;&apos;w_grad&apos;: w_grad, &apos;J&apos;: J, &apos;h&apos;: y_pre&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">X_original=np.mat([[0,0],[0,1],[1,0],[1,1]])</span><br><span class="line">#将数据进行归一化处理,采用标准归一化</span><br><span class="line">X=np.mat(np.zeros(X_original.shape))</span><br><span class="line">for i in range(X_original.shape[1]):</span><br><span class="line">  X[:,i]=(X_original[:,i]-X_original[:,i].mean())/X_original[:,i].var()**0.5</span><br><span class="line">Y=np.mat([0,1,1,0])</span><br><span class="line">layers = [2,2,1]            #输入层2个神经元，隐藏层2个神经元，输出1个神经元</span><br><span class="line">epochs = 10000              #迭代次数</span><br><span class="line">alpha_0= 0.2                #学习率</span><br><span class="line">beta =  0.5               #利用指数衰减的学习率                  </span><br><span class="line">w=init_weights(layers)      #首先将全部参数进行初始化</span><br><span class="line">result = &#123;&apos;J&apos;: [], &apos;h&apos;: []&#125; #存放损失值和预测值</span><br><span class="line">w_s = &#123;&#125;                    #存放参数</span><br><span class="line">#对每次迭代进行以下操作</span><br><span class="line">for i in range(epochs):</span><br><span class="line">  fit_result = fit(X, Y, w)</span><br><span class="line">  w_grad = fit_result.get(&apos;w_grad&apos;) #每次迭代之后的梯度</span><br><span class="line">  J = fit_result.get(&apos;J&apos;)           #获取损失函数，每次迭代之后的损失值</span><br><span class="line">  h_current = fit_result.get(&apos;h&apos;)   #每次迭代之后的预测值</span><br><span class="line">  result[&apos;J&apos;].append(J)             #连接起来</span><br><span class="line">  result[&apos;h&apos;].append(h_current)</span><br><span class="line">  for j in range(len(w)):</span><br><span class="line">    alpha=alpha_0*beta**i          </span><br><span class="line">    w[j] -= alpha_0 * w_grad[j]      #参数改变</span><br><span class="line">    if i == 0 or i == (epochs - 1):</span><br><span class="line">      w_s[&apos;w_&apos; + str(i)] = w_grad[:]</span><br><span class="line"></span><br><span class="line">##画出损失函数的变化</span><br><span class="line">plt.plot(result.get(&apos;J&apos;))</span><br><span class="line">plt.show()</span><br><span class="line">#输出开始时的参数值和最终的梯度值</span><br><span class="line">print(w_s)</span><br><span class="line">#输出y的预测值,第一次迭代和最后一次迭代的预测值</span><br><span class="line">print(result.get(&apos;h&apos;)[0], result.get(&apos;h&apos;)[-1])</span><br></pre></td></tr></table></figure>
-<p>将全部参数全部初始化为0，输出结果如下：</p>
-<p>各个变量的预测y为（0.5，0.5，0.5，0.5），损失J与迭代次数的关系为：</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/init_0.png" alt="initial"></p>
-<p>将全部参数进行高斯初始化，输出结果如下：</p>
-<p>各个变量的预测y为（0.001,0.999,0.999,0.001），损失J与迭代次数的关系为：</p>
-<p><img src="/2018/02/23/神经网络优化及解决异或问题/init_gaussion.png" alt="initial1"></p>
-<p>由以上两幅图可以看出：</p>
-<ul>
-<li>不能将全部参数初始化为0，要进行随机初始化</li>
-</ul>
-<ul>
-<li>三层的神经网络可以很好的解决异或问题</li>
-<li>随着迭代次数的增加，最终的损失逐渐减小，且在1000次左右时损失达到最小，收敛速度很快。</li>
-</ul>
-
-          
+          神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）：
+拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $
+目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$
+为了使J(\theta)达到最小，一般采用如下方法来训练参数。
+梯度下降法（B
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/23/神经网络优化及解决异或问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -544,47 +1097,18 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对<script type="math/tex">p(x|y)</script>和<script type="math/tex">p(y)</script>进行建模，此处假设输出空间为<script type="math/tex">y\in\{0,1\}</script>，则目标函数为：</p>
-<p>$argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1）</p>
-<p>Assumption：</p>
-<p>$y\sim Bernoulli(\phi ) $         即： <script type="math/tex">p(y)~\phi ^y(1-\phi )^{(1-y)}</script>                                                                     （2）</p>
-<p>$(x|y=0)\sim N(\mu _0,\Sigma)$  即：<script type="math/tex">p(x|y=0)=\frac {1}{(2\pi)^{n/2}\Sigma^{-1}}exp\{-\frac {1}{2}(x-\mu_0)^T\Sigma^{-1}(x-\mu_0)\}</script>     （3）</p>
-<p>$(x|y=1)\sim N(\mu _1,\Sigma)$  即：<script type="math/tex">p(x|y=1)=\frac {1}{(2\pi)^{n/2}\Sigma^{-1}}exp\{-\frac {1}{2}(x-\mu_1)^T\Sigma^{-1}(x-\mu_1)\}</script>     （4）</p>
-<p>高斯判别分析就是假设在已知y的分布时，x服从高斯分布，当然也可以假设给定y的分布时，x服从泊松分布，这样模型就变为了泊松判别分析。</p>
-<p>在假设满足的情况下，给定训练数据集<script type="math/tex">T=\{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}</script>,则这些数据的对数似然函数为：</p>
-<p>$L(\phi,\mu_0,\mu_1,\Sigma)=ln\prod_{i=1}^{n}p(x_i,y_i)=ln\prod_{i=1}^{n}p(x_i|y_i)p(y_i)$               （5）</p>
-<p>将(2)(3)(4)对代入(5)并分别对<script type="math/tex">\phi,\mu_0,\mu_1,\Sigma</script> 求导可以得到如下结果：</p>
-<p>$\hat \phi=\frac{\sum_{i=1}^{n}}{n}$                                                  （6）       </p>
-<p>$\hat \mu_0=\frac{\sum_{i=1}^{n}I(y_i=0)x_i}{\sum_{i=1}^{n}I(y_i=0)}$                                 （7）</p>
-<p>$\hat \mu_1=\frac{\sum_{i=1}^{n}I(y_i=1)x_i}{\sum_{i=1}^{n}I(y_i=1)}$                                 （8）</p>
-<p>$\hat \Sigma=\frac{1}{m}\sum_{i=1}^{m}(x_i-\mu_{yi})^T(x_i-\mu_{yi})$   （9）</p>
-<h2 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h2><p>也就是说，对于训练集的数据，我们建立如上模型，计算出参数的值。而对于测试集的数据，我们利用此模型来进行预测，预测准则如下：</p>
-<p>给定样本<script type="math/tex">(x_i,y_i)</script>，如果<script type="math/tex">p(y=1|x_i)>p(y=0|x_i)</script>，则y的预测值就为1，即概率最大化原则。</p>
-<p>评判预测结果的好坏，可以利用<strong>0-1损失函数</strong>：</p>
-<p>$L(y,\hat y)=I(y==\hat y)$</p>
-<h2 id="python实现"><a href="#python实现" class="headerlink" title="python实现"></a>python实现</h2><p><em>前期准备</em></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#加载需要的module</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D                  <span class="comment">#用来画3D图</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##首先simulation数据集，y服从参数为phi的Bernoulli分布，在给定y=0或者y=1时，x均服从高斯分布</span></span><br><span class="line"><span class="comment">#均值分别为mu_0和mu_1，方差均为Σ</span></span><br><span class="line">num,train_num,test_num,phi=[<span class="number">3000</span>,<span class="number">2000</span>,<span class="number">1000</span>,<span class="number">0.5</span>]           <span class="comment">##训练数据和测试数据的个数</span></span><br><span class="line">mu_0=[<span class="number">1.1</span>,<span class="number">1.1</span>]                                            <span class="comment">#给定y=0时，x服从高斯分布，高斯分布的均值</span></span><br><span class="line">mu_1=[<span class="number">5.5</span>,<span class="number">5.5</span>]                                            <span class="comment">#y=1时，x高斯分布的均值</span></span><br><span class="line">sigma=np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>]).reshape(<span class="number">2</span>,<span class="number">2</span>)                    <span class="comment">#高斯分布的协方差矩阵</span></span><br><span class="line">y=np.random.binomial(<span class="number">1</span>,phi,size=num).reshape(num,<span class="number">1</span>)       <span class="comment">#产生数据y，bernoulli分布</span></span><br><span class="line">x=np.array(np.zeros([num,<span class="number">2</span>]))                             <span class="comment">#用来存放数据x</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(num):                                      <span class="comment">#产生x</span></span><br><span class="line">  <span class="keyword">if</span> y[i]==<span class="number">1</span>:x[i]=np.random.multivariate_normal(mu_1,sigma)</span><br><span class="line">  <span class="keyword">else</span>:x[i]=np.random.multivariate_normal(mu_0,sigma)</span><br><span class="line">data=np.concatenate((x,y),axis=<span class="number">1</span>)                         <span class="comment">#将x和y组合到一起</span></span><br></pre></td></tr></table></figure>
-<p><em>画图查看</em></p>
-<p>二元高斯分布的密度函数为：</p>
-<p>$f(x,y)=(2\pi \sigma_1 \sigma_2 \sqrt{(1-\rho^2)})^{-1}exp([-\frac {1}{2(1-\rho ^2)}(\frac {(x-\mu _0)^2}{\sigma _1^2}-\frac {2\rho (x-\mu_0)(y-\mu_1)}{\sigma _1 \sigma _2}+\frac {(y-\mu_1)^2}{\sigma _2^2})])$</p>
-<p>3D图形如下：</p>
-<p><img src="/2018/02/04/高斯判别分析及其python实现/gauss.png" alt="gauss分布"></p>
-<p>等高线图如下：</p>
-<p><img src="/2018/02/04/高斯判别分析及其python实现/contour.png" alt="contour"></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#此函数用来产生xyz层，输入值为x轴,y轴的均值，标准差和相关系数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_gaussian_layer</span><span class="params">(mu_x,mu_y,sigma1,sigma2,rho)</span>:</span></span><br><span class="line">    x = np.arange(lenl, lenr, step)</span><br><span class="line">    y = np.arange(lenl, lenr, step)</span><br><span class="line">    x, y = np.meshgrid(x, y)</span><br><span class="line">    z=np.exp(((x-mu_x)**<span class="number">2</span>/sigma1**<span class="number">2</span>+(y-mu_y)**<span class="number">2</span>/sigma2**<span class="number">2</span><span class="number">-2</span>*rho*(x-mu_x)*(y-mu_y)/sigma1/sigma2)*(<span class="number">-1</span>/(<span class="number">2</span><span class="number">-2</span>*rho**<span class="number">2</span>)))                   <span class="comment">#给定x和y，可以求出z值</span></span><br><span class="line">    z = z/(np.sqrt(<span class="number">2</span>*np.pi)*sigma1*sigma2)</span><br><span class="line">    <span class="keyword">return</span> (x,y,z)<span class="comment">##返回一个tuple</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##画二元高斯分布（两个）</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>]=[<span class="string">'SimHei'</span>]                <span class="comment">#用来正常显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>]=<span class="keyword">False</span>                  <span class="comment">#用来正常显示负号</span></span><br><span class="line">lenl,lenr,step=[<span class="number">-2</span>,<span class="number">5</span>,<span class="number">0.2</span>]</span><br><span class="line">x1,y1,z1=build_gaussian_layer(mu_0[<span class="number">0</span>],mu_0[<span class="number">1</span>],sigma[<span class="number">0</span>,<span class="number">0</span>],sigma[<span class="number">1</span>,<span class="number">1</span>],sigma[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">x2,y2,z2=build_gaussian_layer(mu_1[<span class="number">0</span>],mu_1[<span class="number">1</span>],sigma[<span class="number">0</span>,<span class="number">0</span>],sigma[<span class="number">1</span>,<span class="number">1</span>],sigma[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">fig=plt.figure(figsize=(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">ax=fig.gca(projection=<span class="string">'3d'</span>)</span><br><span class="line">ax.plot_surface(x1,y1,z1,cmap=<span class="string">'rainbow'</span>,rstride=<span class="number">4</span>,cstride=<span class="number">4</span>)<span class="comment">##rstride和cstride是表示x轴和y轴的跨度，跨度越大，线越稀疏</span></span><br><span class="line">ax.plot_surface(x2,y2,z2,cmap=<span class="string">'rainbow'</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">'x轴'</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">'y轴'</span>)</span><br><span class="line">ax.set_title(<span class="string">'二元高斯分布3D图'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><em>建立模型</em></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用数据集训练模型</span></span><br><span class="line">phi_hat=sum(y[:train_num])/train_num                  <span class="comment">#估计参数phi</span></span><br><span class="line">wh_1=data[np.where(data[:train_num,<span class="number">2</span>]==<span class="number">1</span>),][<span class="number">0</span>]       </span><br><span class="line">wh_0=data[np.where(data[:train_num,<span class="number">2</span>]==<span class="number">0</span>),][<span class="number">0</span>]</span><br><span class="line">mu_1_hat=np.mean(wh_1,axis=<span class="number">0</span>)[:<span class="number">2</span>]                     <span class="comment">#估计出mu_1，将数据代入上面的公式</span></span><br><span class="line">mu_0_hat=np.mean(wh_0,axis=<span class="number">0</span>)[:<span class="number">2</span>]                     <span class="comment">#估计出mu_0</span></span><br><span class="line">sigma_hat=((wh_1[:,:<span class="number">2</span>]-mu_1_hat).T.dot(wh_1[:,:<span class="number">2</span>]-mu_1_hat)+(wh_0[:,:<span class="number">2</span>]-mu_0_hat).T.dot(wh_0[:,:<span class="number">2</span>]-mu_0_hat))/train_num       <span class="comment">#估计出sigma</span></span><br></pre></td></tr></table></figure>
-<p>此模型得出结果如下：</p>
-<p>$\hat \phi=0.5$</p>
-<p>$\hat \mu_0=[1.14,1.10]$</p>
-<p>$\hat \mu_1=[3.34,2.29]$</p>
-<p>$\hat \Sigma=\left[\begin{matrix} 1.02&amp; 0.008 \\ \ 0.008 &amp; 0.97  \end{matrix} \right] $</p>
-<p><em>预测</em></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##定义预测函数，输入测试集，输出预测的类别</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gdis_pre</span><span class="params">(test)</span>:</span></span><br><span class="line">  test=np.array(test)                                  <span class="comment">#转换成array数据集</span></span><br><span class="line">  y_hat=np.array(np.zeros(test.shape[<span class="number">0</span>]),dtype=<span class="string">'int32'</span>)<span class="comment">#存放y的预测值</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(test.shape[<span class="number">0</span>]):</span><br><span class="line">    p1=(test[i]-mu_1_hat).T.dot(np.linalg.inv(sigma_hat)).dot(test[i]-mu_1_hat)</span><br><span class="line">    p0=(test[i]-mu_0_hat).T.dot(np.linalg.inv(sigma_hat)).dot(test[i]-mu_0_hat)</span><br><span class="line">    <span class="keyword">if</span> p1&lt;=p0:y_hat[i]=<span class="number">1</span>                               <span class="comment">#比较在给定x时，y属于哪一类的概率比较大</span></span><br><span class="line">  <span class="keyword">return</span>(y_hat)                         </span><br><span class="line"></span><br><span class="line">test=data[train_num:num,:<span class="number">2</span>]                            <span class="comment">#我们数据的测试集</span></span><br><span class="line">y_hat=gdis_pre(test)                                   <span class="comment">#预测值</span></span><br><span class="line">sum(abs(y_hat-data[train_num:num,<span class="number">2</span>]))                  <span class="comment">#损失，这里采用0-1损失</span></span><br></pre></td></tr></table></figure>
-<p> 损失为105，也就是说，1000个数据集中错个判个数为105。</p>
-<p><strong>预测结果的准确性与数据的可分程度有关</strong></p>
-
-          
+          简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为：
+$argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1）
+Assumption：
+$y\sim Bernoulli
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/04/高斯判别分析及其python实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -702,29 +1226,18 @@
       
         
           
-            <h1 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h1><h2 id="感知机简介"><a href="#感知机简介" class="headerlink" title="感知机简介"></a>感知机简介</h2><p>感知机是一个线性分类器，且是二分类的分类模型，输入空间<script type="math/tex">x\subset R^n</script>，输出空间<script type="math/tex">y=\{1,-1\}</script>.</p>
-<p>则感知机表示从输入到输出空间的函数，具体形式为：</p>
-<p>​                                                           $f(x)=sign(w\cdot x+b )$</p>
-<p>其中<script type="math/tex">w\in R^n</script>叫做权值向量(weight vector)，<script type="math/tex">b</script>叫做偏置(bias)。sign函数是符号函数，即：</p>
-<p>​                                                             $sign(x)=I(x\geq 0)$</p>
-<p>直观上讲，线性函数<script type="math/tex">w\cdot x+b</script>将一个线性可分的数据集分为正负两类。如图：</p>
-<p><img src="/2018/02/04/感知机原理及其在python中算法实现/捕获.PNG" alt="感知机"></p>
-<h2 id="感知机学习算法"><a href="#感知机学习算法" class="headerlink" title="感知机学习算法"></a>感知机学习算法</h2><p>给定一个训练数据集$T={(x_1,y_1)…(x_N,y_N)}$，其中误分类点集合为M，我们的目标函数是最小化损失函数(只有被错误分类的点才能造成损失)，即：</p>
-<p>​                                           $minL(w,b)=-\sum_{x_i\in M}y_i(w\cdot x+b)$</p>
-<p>则利用随机梯度下降法(每次选取一个误分类点进行参数更新)，目标函数关于<script type="math/tex">w,b</script>的偏导数为：  </p>
-<p>​                                     $\nabla _w L(w,b)=-\sum_{x_i \in M}y_ix_i,\nabla _b L(w,b)=-\sum_{x_i\in M}y_i$</p>
-<p>则每一次的更新迭代为：</p>
-<p>​                                                   $w=w+\eta y_ix_i,   b=b+\eta y_i$</p>
-<p>因此感知机的实现算法为：</p>
-<p>1.初始值<script type="math/tex">w_0,b_0</script></p>
-<p>2.<script type="math/tex">i=1</script>，如果<script type="math/tex">y_i(w\cdot x_i+b)\leq0</script>，更新参数：<script type="math/tex">w=w+\eta y_ix_i,   b=b+\eta y_i，i=1</script>,否则<script type="math/tex">i+=1</script></p>
-<p>3.重复2直到<script type="math/tex">i=N</script></p>
-<h1 id="python算法实现"><a href="#python算法实现" class="headerlink" title="python算法实现"></a>python算法实现</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''用python来实现感知机'''</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  <span class="comment">##加载需要的包</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> ggplot <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">w=[<span class="number">-2.1</span>,<span class="number">-3.8</span>];b=<span class="number">2.4</span> <span class="comment">##权重和偏置</span></span><br><span class="line">n=<span class="number">200</span>;p=<span class="number">2</span>           <span class="comment">#样本数为200，变量数为2</span></span><br><span class="line">x=np.zeros([n,p])   <span class="comment">#之后存入x和y</span></span><br><span class="line">y=np.zeros(n)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):  <span class="comment">#产生x和y</span></span><br><span class="line">  x[i]=np.random.randn(<span class="number">1</span>,p)</span><br><span class="line">  <span class="keyword">if</span> (sum(w*x[i])+b)&gt;=<span class="number">0</span> :y[i]=<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:y[i]=<span class="number">-1</span></span><br><span class="line"><span class="comment">##下面进行数据可视化</span></span><br><span class="line">x_df,y_df=pd.DataFrame(x),pd.DataFrame(y)</span><br><span class="line">data=pd.concat([y_df,x_df],axis=<span class="number">1</span>)</span><br><span class="line">data.columns=[<span class="string">'y'</span>,<span class="string">'x1'</span>,<span class="string">'x2'</span>]</span><br><span class="line">ggplot(aes(x=<span class="string">'x1'</span>,y=<span class="string">'x2'</span>,color=<span class="string">'y'</span>),data)+geom_point()<span class="comment">#可以看出数据是线性可分的</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">#下面进行感知机训练</span></span><br><span class="line"><span class="comment">#设初值，其中eta是学习率，这里取为0.1</span></span><br><span class="line">w_0=[<span class="number">-2</span>,<span class="number">-3.5</span>];b_0=<span class="number">2</span>;eta=<span class="number">0.1</span>;i=<span class="number">0</span>;iter=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;n):</span><br><span class="line">  <span class="keyword">if</span> (y[i]*sum(w_0*x[i])+b_0)&lt;<span class="number">0</span> :</span><br><span class="line">    w_0+=eta*y[i]*x[i]</span><br><span class="line">    b_0+=eta*y[i]</span><br><span class="line">    i=<span class="number">0</span><span class="comment">#每次用误分点更新之后，从头继续查找</span></span><br><span class="line">  <span class="keyword">else</span>:i+=<span class="number">1</span><span class="comment">#此点不是误分点时，继续往下查找</span></span><br><span class="line">  iter+=<span class="number">1</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>]=[<span class="string">'SimHei'</span>]<span class="comment">#用来正常显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>]=<span class="keyword">False</span><span class="comment">#用来正常显示负号</span></span><br><span class="line">ggplot(aes(x=<span class="string">'x1'</span>,y=<span class="string">'x2'</span>),data)+geom_point(aes(color=<span class="string">'y'</span>))+geom_abline(slope=-</span><br><span class="line">w_0</span><br><span class="line">b_0</span><br><span class="line">w_0[<span class="number">0</span>]/w_0[<span class="number">1</span>],intercept=-b_0/w_0[<span class="number">1</span>],color=<span class="string">'red'</span>)+</span><br><span class="line">  ggtitle(<span class="string">'感知机'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>结果如下</strong></p>
-<p><img src="/2018/02/04/感知机原理及其在python中算法实现/perceptron.png" alt="点及分类线"></p>
-<p><em>从图中也能看出，我们的样本点是线性可分的，且感知机模型能正确将样本点进行分类。</em></p>
-
-          
+          感知机感知机简介感知机是一个线性分类器，且是二分类的分类模型，输入空间x\subset R^n，输出空间y=\{1,-1\}.
+则感知机表示从输入到输出空间的函数，具体形式为：
+​                                                           $f(x)=sign(w\cdot x+b )$
+其中w\in R^n叫做权值向量(weight ve
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/04/感知机原理及其在python中算法实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -771,7 +1284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/第一次写博客/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/二分搜索树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -790,7 +1303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/第一次写博客/" itemprop="url">第一次写博客</a></h1>
+                <a class="post-title-link" href="/2018/02/03/二分搜索树/" itemprop="url">二分搜索树</a></h1>
         
 
         <div class="post-meta">
@@ -842,10 +1355,17 @@
       
         
           
-            <h1 id="第一次写博客"><a href="#第一次写博客" class="headerlink" title="第一次写博客"></a>第一次写博客</h1><pre><code>##我是二级标题
-</code></pre><p>作为傻臭臭的<strong>老公</strong>，搭建博客这种东西，当然是我来了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String name = <span class="string">"123"</span>;</span><br></pre></td></tr></table></figure></p>
-
-          
+          二分搜索树简介：二分搜索树的实现，二分搜索树满足以下条件：左子树值&lt;根值&lt;右子树值；任意一个子树都是二分搜索树
+本文主要实现了二叉搜索树的几个功能，包括建立一个二叉搜索树，向现有树种添加元素，删除元素以及遍历整棵树
+树结构12345678910111213141516171819202122232425262728293031323334353637383940414243444546
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/二分搜索树/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -892,7 +1412,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/二分查找/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -911,7 +1431,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/02/03/二分查找/" itemprop="url">二分查找</a></h1>
         
 
         <div class="post-meta">
@@ -923,7 +1443,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T20:34:56+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:33:29+08:00">
                 2018-02-03
               </time>
             
@@ -963,17 +1483,18 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          二分查找简介：二分查找（对于顺序数组）
+思路：对于升序数组，每次从len(n)//2的位置开始查找，如果target&lt;nums[len(n)//2]，则查找范围    为0——(len(n)//2-1)，否则，查找范围为(len(n)//2+1)——len(n)
+时间复杂度: nlogn
+举一反三：对于有序数组的查找问题，可以利用二分查找的思想，比如对于旋转k后的有序数组([3,4,5,1,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/二分查找/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1010,6 +1531,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1053,7 +1578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1065,10 +1590,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -1121,7 +1646,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -1220,13 +1745,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

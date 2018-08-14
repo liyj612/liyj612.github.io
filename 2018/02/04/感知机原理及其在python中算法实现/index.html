@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/捕获.PNG">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/perceptron.png">
-<meta property="og:updated_time" content="2018-02-04T09:25:19.263Z">
+<meta property="og:updated_time" content="2018-03-01T11:57:37.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="感知机原理及其在python中算法实现">
 <meta name="twitter:description" content="感知机感知机简介感知机是一个线性分类器，且是二分类的分类模型，输入空间x\subset R^n，输出空间y=\{1,-1\}. 则感知机表示从输入到输出空间的函数，具体形式为： ​                                                           $f(x)=sign(w\cdot x+b )$ 其中w\in R^n叫做权值向量(weight ve">
@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -190,6 +190,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -311,7 +321,7 @@
 <p>直观上讲，线性函数<script type="math/tex">w\cdot x+b</script>将一个线性可分的数据集分为正负两类。如图：</p>
 <p><img src="/2018/02/04/感知机原理及其在python中算法实现/捕获.PNG" alt="感知机"></p>
 <h2 id="感知机学习算法"><a href="#感知机学习算法" class="headerlink" title="感知机学习算法"></a>感知机学习算法</h2><p>给定一个训练数据集$T={(x_1,y_1)…(x_N,y_N)}$，其中误分类点集合为M，我们的目标函数是最小化损失函数(只有被错误分类的点才能造成损失)，即：</p>
-<p>​                                           $minL(w,b)=-\sum_{x_i\in M}y_i(w\cdot x+b)$</p>
+<p>​                                           $minL(w,b)=-\sum_{x_i\in M}y_i(w\cdot x_i+b)$</p>
 <p>则利用随机梯度下降法(每次选取一个误分类点进行参数更新)，目标函数关于<script type="math/tex">w,b</script>的偏导数为：  </p>
 <p>​                                     $\nabla _w L(w,b)=-\sum_{x_i \in M}y_ix_i,\nabla _b L(w,b)=-\sum_{x_i\in M}y_i$</p>
 <p>则每一次的更新迭代为：</p>
@@ -336,6 +346,24 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Lisa
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/" title="感知机原理及其在python中算法实现">http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="" rel="external nofollow" target="_blank"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a></a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
@@ -354,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/03/第一次写博客/" rel="next" title="第一次写博客">
-                <i class="fa fa-chevron-left"></i> 第一次写博客
+              <a href="/2018/02/03/二分搜索树/" rel="next" title="二分搜索树">
+                <i class="fa fa-chevron-left"></i> 二分搜索树
               </a>
             
           </div>
@@ -443,7 +471,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -455,10 +483,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -527,7 +555,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -626,13 +654,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/gauss.png">
 <meta property="og:image" content="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/contour.png">
-<meta property="og:updated_time" content="2018-02-06T03:14:45.701Z">
+<meta property="og:updated_time" content="2018-03-01T11:57:35.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高斯判别分析及其python实现">
 <meta name="twitter:description" content="简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为： $argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1） Assumption： $y\sim Bernoulli">
@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -190,6 +190,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -306,7 +316,7 @@
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对<script type="math/tex">p(x|y)</script>和<script type="math/tex">p(y)</script>进行建模，此处假设输出空间为<script type="math/tex">y\in\{0,1\}</script>，则目标函数为：</p>
 <p>$argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1）</p>
 <p>Assumption：</p>
-<p>$y\sim Bernoulli(\phi ) $         即： <script type="math/tex">p(y)~\phi ^y(1-\phi )^{(1-y)}</script>                                                                     （2）</p>
+<p>$y\sim Bernoulli(\phi ) $         即： <script type="math/tex">p(y) \sim \phi ^y(1-\phi )^{(1-y)}</script>                                                                 （2）</p>
 <p>$(x|y=0)\sim N(\mu _0,\Sigma)$  即：<script type="math/tex">p(x|y=0)=\frac {1}{(2\pi)^{n/2}\Sigma^{-1}}exp\{-\frac {1}{2}(x-\mu_0)^T\Sigma^{-1}(x-\mu_0)\}</script>     （3）</p>
 <p>$(x|y=1)\sim N(\mu _1,\Sigma)$  即：<script type="math/tex">p(x|y=1)=\frac {1}{(2\pi)^{n/2}\Sigma^{-1}}exp\{-\frac {1}{2}(x-\mu_1)^T\Sigma^{-1}(x-\mu_1)\}</script>     （4）</p>
 <p>高斯判别分析就是假设在已知y的分布时，x服从高斯分布，当然也可以假设给定y的分布时，x服从泊松分布，这样模型就变为了泊松判别分析。</p>
@@ -353,6 +363,24 @@
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Lisa
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/" title="高斯判别分析及其python实现">http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="" rel="external nofollow" target="_blank"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a></a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -461,7 +489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -473,10 +501,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -545,7 +573,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -644,13 +672,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
