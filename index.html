@@ -1284,7 +1284,7 @@ $y\sim Bernoulli
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/二分搜索树/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/容器盛水/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1303,7 +1303,7 @@ $y\sim Bernoulli
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/二分搜索树/" itemprop="url">二分搜索树</a></h1>
+                <a class="post-title-link" href="/2018/02/03/容器盛水/" itemprop="url">容器盛水</a></h1>
         
 
         <div class="post-meta">
@@ -1355,13 +1355,16 @@ $y\sim Bernoulli
       
         
           
-          二分搜索树简介：二分搜索树的实现，二分搜索树满足以下条件：左子树值&lt;根值&lt;右子树值；任意一个子树都是二分搜索树
-本文主要实现了二叉搜索树的几个功能，包括建立一个二叉搜索树，向现有树种添加元素，删除元素以及遍历整棵树
-树结构12345678910111213141516171819202122232425262728293031323334353637383940414243444546
+          
+题目：给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。画 n 条垂直线，使得垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
+思路：双重循环，每次查找l—r区间内可以装的水的体积
+注：要取左右两条线中较短的那条线的高度来作为容器的高
+
+1234567891011121314
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/二分搜索树/#more" rel="contents">
+            <a class="btn" href="/2018/02/03/容器盛水/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1412,7 +1415,7 @@ $y\sim Bernoulli
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/二分查找/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/找出第k大的数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1431,7 +1434,7 @@ $y\sim Bernoulli
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/二分查找/" itemprop="url">二分查找</a></h1>
+                <a class="post-title-link" href="/2018/02/03/找出第k大的数/" itemprop="url">找出第k大的数</a></h1>
         
 
         <div class="post-meta">
@@ -1483,14 +1486,14 @@ $y\sim Bernoulli
       
         
           
-          二分查找简介：二分查找（对于顺序数组）
-思路：对于升序数组，每次从len(n)//2的位置开始查找，如果target&lt;nums[len(n)//2]，则查找范围    为0——(len(n)//2-1)，否则，查找范围为(len(n)//2+1)——len(n)
-时间复杂度: nlogn
-举一反三：对于有序数组的查找问题，可以利用二分查找的思想，比如对于旋转k后的有序数组([3,4,5,1,
+          题目：在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+思路：堆排序
+注：可以用python中自带的堆包
+12345678910111213class Solution:    def findKthLargest(self, nums, k):        """        :type nums: List[int
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/二分查找/#more" rel="contents">
+            <a class="btn" href="/2018/02/03/找出第k大的数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1532,7 +1535,7 @@ $y\sim Bernoulli
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1578,7 +1581,7 @@ $y\sim Bernoulli
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1591,7 +1594,7 @@ $y\sim Bernoulli
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
