@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/01/排序算法/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/10/2018-08-10-最长上升子序列300/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/01/排序算法/" itemprop="url">排序算法</a></h1>
+                <a class="post-title-link" href="/2018/08/10/2018-08-10-最长上升子序列300/" itemprop="url">最长上升子序列300</a></h1>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T21:33:29+08:00">
-                2018-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T21:33:29+08:00">
+                2018-08-10
               </time>
             
 
@@ -313,18 +313,20 @@
       
         
           
-          简介：本文主要用python实现各种排序算法，包括插入排序，归并排序；快速排序和选择排序
-
-插入排序
-
-​       思路：每次选择i后面的一个元素，即i+1个位置的元素，将i+1插入到前面序列的正确位置
-​    时间复杂度：n**2
-​    稳定性：稳定
-1234567def insert_sort(alist):    for i in range(len(alist) - 1 ):  
+          题目：给定一个无序的整数数组，找到其中最长上升子序列的长度。
+输入：[10,9,2,5,3,7,101,18]
+输出：4
+解释：最长的上升子序列是 [2,3,7,101]，它的长度是 4。
+思路：动态规划
+状态：
+1dp[i]表示一定将i纳入最长子序列时最长子序列的长度
+分析：
+对于j from 0 to i: 如果nums[i] &gt; nums[j], 则dp[j]更新，选择最大的
+状态转移
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/01/排序算法/#more" rel="contents">
+            <a class="btn" href="/2018/08/10/2018-08-10-最长上升子序列300/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -375,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/07/03/最大索引堆/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/10/2018-08-10-0-1背包问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -394,7 +396,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/03/最大索引堆/" itemprop="url">最大索引堆</a></h1>
+                <a class="post-title-link" href="/2018/08/10/2018-08-10-0-1背包问题/" itemprop="url">0-1背包问题</a></h1>
         
 
         <div class="post-meta">
@@ -406,8 +408,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T23:44:19+08:00">
-                2018-07-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T21:33:29+08:00">
+                2018-08-10
               </time>
             
 
@@ -446,16 +448,16 @@
       
         
           
-          最大索引堆
-简介：本文主要实现一个最大索引堆，最大索引堆的意义：当堆中的元素很复杂如每个堆中的元素是一篇文档，交换堆中的元素变得复杂，改为交换堆的index
-
-实现一个最大索引堆
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+          题目：有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。
+输入：v = [12, 3, 10, 3, 6]，w = [5, 4, 7, 2, 6]，V=15
+输出：25
+法一：动态规划动态规划是自底向上的解决办法
+状态转移：
+123456# 要考虑的第i个物品的重量w[i]比容量j还要大，只能选择不放第i个物品if w[i] &gt
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/03/最大索引堆/#more" rel="contents">
+            <a class="btn" href="/2018/08/10/2018-08-10-0-1背包问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -506,7 +508,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/06/03/最大堆的实现/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/10/2018-08-10-最佳买卖股票时机含冷冻期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -525,7 +527,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/03/最大堆的实现/" itemprop="url">最大堆的实现</a></h1>
+                <a class="post-title-link" href="/2018/08/10/2018-08-10-最佳买卖股票时机含冷冻期/" itemprop="url">最佳买卖股票时机含冷冻期</a></h1>
         
 
         <div class="post-meta">
@@ -537,8 +539,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T20:23:11+08:00">
-                2018-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T21:33:29+08:00">
+                2018-08-10
               </time>
             
 
@@ -577,22 +579,19 @@
       
         
           
-          最大堆的实现
-最大堆简介：根节点的关键字是堆里所有结点关键字中最大者，称为大根堆，又称最大堆。大根堆要求根节点的关键字既大于或等于左子树的关键字值，又大于或等于右子树的关键字值。
-性质：
+          题目：给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。
+设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:
 
-堆是一棵完全二叉树
-最大堆的任一子树也是最大堆
+你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。
 
-简介：本文主要实现最大堆以及最大堆的一些基本功能，包括插入元素(插入之后仍为最大堆)，删除元素(删除之后仍保证为最大堆)
-
-定义一个最大堆
-
-123456789
+输入：[1,2,3,0,2]
+输出：3
+解释：对应的交易状态为: [买入, 卖出, 冷冻期, 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/03/最大堆的实现/#more" rel="contents">
+            <a class="btn" href="/2018/08/10/2018-08-10-最佳买卖股票时机含冷冻期/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -643,7 +642,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/03/01/爬取知乎live并探讨影响参与人数的因素/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-打家劫舍337/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -662,7 +661,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/01/爬取知乎live并探讨影响参与人数的因素/" itemprop="url">爬取知乎live并探讨影响参与人数的因素</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-打家劫舍337/" itemprop="url">打家劫舍337</a></h1>
         
 
         <div class="post-meta">
@@ -674,8 +673,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T18:20:18+08:00">
-                2018-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -714,12 +713,14 @@
       
         
           
-          ​      
-近几年，知乎发展迅速，越来越多的人会在业余时间刷知乎。短短几年时间，知乎已从当年的问答社区变为如今每个人必备APP，截止到2017 年2 月，知乎已经拥有6900 万注册用户。2016 年是知识付费的元年，知乎也搭上了知识付费的列车—知乎live，各个类型的live 层出不穷，一种在线问答平台由此诞生。但是不同live 的参与人数差别很大，有些知乎live 人山人海，有些live 
+          题目：在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
+计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。
+ 输入：
+1234567[3,
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/爬取知乎live并探讨影响参与人数的因素/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-打家劫舍337/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -770,7 +771,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/28/logistic/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-最长有效括号32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -789,7 +790,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/28/logistic/" itemprop="url">logistic</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-最长有效括号32/" itemprop="url">最长有效括号32</a></h1>
         
 
         <div class="post-meta">
@@ -801,8 +802,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T22:01:35+08:00">
-                2018-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -841,11 +842,17 @@
       
         
           
-          
-          
+          题目：给定一个只包含 ‘(‘ 和 ‘)’ 的字符串，找出最长的包含有效括号的子串的长度。
+输入：”)()())”
+输出：4
+思路：动态规划
+状态：dp[i]表示到i时最长有效括号的长度
+状态转移方程：
+1234# 对于dp[i],只有当s[i] == ‘）’时才进行变化if seq[i-dp[i-1]-1] == '(':   # dp[i] == ')'且与之对应的半个括号 == ‘（’	dp[
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/logistic/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-最长有效括号32/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -896,7 +903,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/23/神经网络优化及解决异或问题/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-解码方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -915,7 +922,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/神经网络优化及解决异或问题/" itemprop="url">神经网络优化及解决异或问题</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-解码方法/" itemprop="url">解码方法91</a></h1>
         
 
         <div class="post-meta">
@@ -927,8 +934,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T20:14:13+08:00">
-                2018-02-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -967,15 +974,16 @@
       
         
           
-          神经网络的几种求解办法考虑任意一层神经网络（样本数为m，变量数为n）：
-拟合函数：      $h(\theta)=\sum_{i=1}^{n}\theta_j x_j $
-目标函数：     $minJ(\theta)=\frac {1}{2m}\sum_{i=1}^{m}(y^i-h_\theta(x^i))^2$
-为了使J(\theta)达到最小，一般采用如下方法来训练参数。
-梯度下降法（B
+          题目：一条包含字母 A-Z 的消息通过以下方式进行了编码：’A’ -&gt; 1’B’ -&gt; 2…’Z’ -&gt; 26，给定一个只包含数字的非空字符串，请计算解码方法的总数。
+输入: “226”
+输出：3
+思路：动态规划
+状态转移：
+123456# 可以去除倒数第一个字符，将前面的字符进行转码if dp[i-1] != '0':	dp[i] += dp[i-1]# 可以去除后两个字符if
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/神经网络优化及解决异或问题/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-解码方法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1026,7 +1034,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/04/高斯判别分析及其python实现/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-电话号码的字母组合17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1045,7 +1053,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/04/高斯判别分析及其python实现/" itemprop="url">高斯判别分析及其python实现</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-电话号码的字母组合17/" itemprop="url">电话号码的字母组合17</a></h1>
         
 
         <div class="post-meta">
@@ -1057,8 +1065,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T20:21:40+08:00">
-                2018-02-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -1097,14 +1105,13 @@
       
         
           
-          简介高斯判别分析是生成学习算法的一种，也是一种分类模型，所谓生成学习算法，是分别对p(x|y)和p(y)进行建模，此处假设输出空间为y\in\{0,1\}，则目标函数为：
-$argmax(p(y|x))=\frac {argmax(p(x|y) p(y))}{p(x)}=argmax(p(x|y) p(y))$            （1）
-Assumption：
-$y\sim Bernoulli
+          题目：给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
+12&apos;2&apos;:&apos;abc&apos;,&apos;3&apos;:&apos;def&apos;,&apos;4&apos;:&apos;ghi&apos;,&apos;5&apos;:&apos;jkl&apos;,&apos
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/高斯判别分析及其python实现/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-电话号码的字母组合17/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1155,7 +1162,7 @@ $y\sim Bernoulli
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/04/感知机原理及其在python中算法实现/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-打家劫舍213/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1174,7 +1181,7 @@ $y\sim Bernoulli
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/04/感知机原理及其在python中算法实现/" itemprop="url">感知机原理及其在python中算法实现</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-打家劫舍213/" itemprop="url">打家劫舍213</a></h1>
         
 
         <div class="post-meta">
@@ -1186,8 +1193,8 @@ $y\sim Bernoulli
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T13:02:38+08:00">
-                2018-02-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -1226,14 +1233,14 @@ $y\sim Bernoulli
       
         
           
-          感知机感知机简介感知机是一个线性分类器，且是二分类的分类模型，输入空间x\subset R^n，输出空间y=\{1,-1\}.
-则感知机表示从输入到输出空间的函数，具体形式为：
-​                                                           $f(x)=sign(w\cdot x+b )$
-其中w\in R^n叫做权值向量(weight ve
+          题目：你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额
+输入：[2,3,2]
+输出：3
+解释：你不能先偷窃 1 号房
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/感知机原理及其在python中算法实现/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-打家劫舍213/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1284,7 +1291,7 @@ $y\sim Bernoulli
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/容器盛水/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-打家劫舍198/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1303,7 +1310,7 @@ $y\sim Bernoulli
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/容器盛水/" itemprop="url">容器盛水</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-打家劫舍198/" itemprop="url">打家劫舍198</a></h1>
         
 
         <div class="post-meta">
@@ -1315,8 +1322,8 @@ $y\sim Bernoulli
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:33:29+08:00">
-                2018-02-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -1355,16 +1362,15 @@ $y\sim Bernoulli
       
         
           
-          
-题目：给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。画 n 条垂直线，使得垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
-思路：双重循环，每次查找l—r区间内可以装的水的体积
-注：要取左右两条线中较短的那条线的高度来作为容器的高
-
-1234567891011121314
+          题目：你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。
+输入：[2,7,9,3,1]
+输出：12
+状态转移：
+1dp[i] = max(dp[i-2]+nums[i-
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/容器盛水/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-打家劫舍198/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1415,7 +1421,7 @@ $y\sim Bernoulli
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/02/03/找出第k大的数/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-整数拆分343/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1434,7 +1440,7 @@ $y\sim Bernoulli
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/找出第k大的数/" itemprop="url">找出第k大的数</a></h1>
+                <a class="post-title-link" href="/2018/08/03/2018-08-03-整数拆分343/" itemprop="url">整数拆分343</a></h1>
         
 
         <div class="post-meta">
@@ -1446,8 +1452,8 @@ $y\sim Bernoulli
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:33:29+08:00">
-                2018-02-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T21:33:29+08:00">
+                2018-08-03
               </time>
             
 
@@ -1486,14 +1492,17 @@ $y\sim Bernoulli
       
         
           
-          题目：在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
-思路：堆排序
-注：可以用python中自带的堆包
-12345678910111213class Solution:    def findKthLargest(self, nums, k):        """        :type nums: List[int
+          题目：给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
+输入：10
+输出：36(10 = 3 + 3 + 4, 3 × 3 × 4 = 36)
+思路：动态规划
+状态转移：
+1dp[i] = max(dp[i-1],2*dp[i-2],  3*dp[i-3] , .... , (n-1) * dp[1])
+状态：将整数i拆分为两个整数的和并使整
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/找出第k大的数/#more" rel="contents">
+            <a class="btn" href="/2018/08/03/2018-08-03-整数拆分343/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1535,7 +1544,7 @@ $y\sim Bernoulli
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1581,7 +1590,7 @@ $y\sim Bernoulli
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1594,7 +1603,7 @@ $y\sim Bernoulli
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
