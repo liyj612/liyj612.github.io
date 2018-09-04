@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-最小路径和64/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/09/2018-08-09-打家劫舍198/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/03/2018-08-03-最小路径和64/" itemprop="url">最小路径和64</a></h1>
+                <a class="post-title-link" href="/2018/08/09/2018-08-09-打家劫舍198/" itemprop="url">打家劫舍198</a></h1>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T21:33:29+08:00">
-                2018-08-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T21:33:29+08:00">
+                2018-08-09
               </time>
             
 
@@ -313,18 +313,15 @@
       
         
           
-          题目：给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
-输入：[  [1,3,1],  [1,5,1],  [4,2,1]]
-输出：7
-思路：动态规划
+          题目：你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。
+输入：[2,7,9,3,1]
+输出：12
 状态转移：
-1dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + nums[i][j]
-状态：走到nums[i,j]位置的总路径
-边缘处理：第一行路径为第一行此列
+1dp[i] = max(dp[i-2]+nums[i-
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/2018-08-03-最小路径和64/#more" rel="contents">
+            <a class="btn" href="/2018/08/09/2018-08-09-打家劫舍198/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -375,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-最长公共子序列/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-不同路径62/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -394,7 +391,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/03/2018-08-03-最长公共子序列/" itemprop="url">最长公共子序列</a></h1>
+                <a class="post-title-link" href="/2018/08/03/2018-08-03-不同路径62/" itemprop="url">不同路径62</a></h1>
         
 
         <div class="post-meta">
@@ -446,17 +443,18 @@
       
         
           
-          题目：求两个str的公共子序列长度，在基因对中用的多
-输入：str1 = “ABCDEF”   str2 = “AEBDEDF”
-输出：5
+          题目：一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。问总共有多少条不同的路径？
+输入：m = 3, n = 2
+输出：3
 思路：动态规划
-状态转移方程：
-1234if str1[i] == str2[j]:	dp[i][j] = dp[i-1][j-1] + 1else:	dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-状态：dp[i,j]表
+状态转移：
+1dp[i][j] =  dp[i][j - 1] + dp[i - 1][j]
+状态：走到位置i，j的路径
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/2018-08-03-最长公共子序列/#more" rel="contents">
+            <a class="btn" href="/2018/08/03/2018-08-03-不同路径62/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -775,7 +773,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-不同路径62/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-整数拆分343/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -794,7 +792,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/03/2018-08-03-不同路径62/" itemprop="url">不同路径62</a></h1>
+                <a class="post-title-link" href="/2018/08/03/2018-08-03-整数拆分343/" itemprop="url">整数拆分343</a></h1>
         
 
         <div class="post-meta">
@@ -846,18 +844,17 @@
       
         
           
-          题目：一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
-机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。问总共有多少条不同的路径？
-输入：m = 3, n = 2
-输出：3
+          题目：给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
+输入：10
+输出：36(10 = 3 + 3 + 4, 3 × 3 × 4 = 36)
 思路：动态规划
 状态转移：
-1dp[i][j] =  dp[i][j - 1] + dp[i - 1][j]
-状态：走到位置i，j的路径
+1dp[i] = max(dp[i-1],2*dp[i-2],  3*dp[i-3] , .... , (n-1) * dp[1])
+状态：将整数i拆分为两个整数的和并使整
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/03/2018-08-03-不同路径62/#more" rel="contents">
+            <a class="btn" href="/2018/08/03/2018-08-03-整数拆分343/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -908,7 +905,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/01/2018-08-01-爬楼梯/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-最小路径和64/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -927,7 +924,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/01/2018-08-01-爬楼梯/" itemprop="url">爬楼梯</a></h1>
+                <a class="post-title-link" href="/2018/08/03/2018-08-03-最小路径和64/" itemprop="url">最小路径和64</a></h1>
         
 
         <div class="post-meta">
@@ -939,8 +936,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T21:33:29+08:00">
-                2018-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T21:33:29+08:00">
+                2018-08-03
               </time>
             
 
@@ -979,20 +976,150 @@
       
         
           
-          题目：假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
-输入：3
-输出：3
+          题目：给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+输入：[  [1,3,1],  [1,5,1],  [4,2,1]]
+输出：7
 思路：动态规划
-状态转移矩阵为：
-dp[i] = dp[i-1] + dp[i-2]
-dp[0] = dp[1] = 1
-状态为：
-爬到第i级台阶的走法有两种情况，先爬到第i-1级台阶+一级台阶和先爬到第i-2级台阶+爬两级台阶
-1234567891011
+状态转移：
+1dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + nums[i][j]
+状态：走到nums[i,j]位置的总路径
+边缘处理：第一行路径为第一行此列
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/01/2018-08-01-爬楼梯/#more" rel="contents">
+            <a class="btn" href="/2018/08/03/2018-08-03-最小路径和64/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/03/2018-08-03-最长公共子序列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisa’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/03/2018-08-03-最长公共子序列/" itemprop="url">最长公共子序列</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T21:33:29+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          题目：求两个str的公共子序列长度，在基因对中用的多
+输入：str1 = “ABCDEF”   str2 = “AEBDEDF”
+输出：5
+思路：动态规划
+状态转移方程：
+1234if str1[i] == str2[j]:	dp[i][j] = dp[i-1][j-1] + 1else:	dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+状态：dp[i,j]表
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/03/2018-08-03-最长公共子序列/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1309,7 +1436,7 @@ dp[0] = dp[1] = 1
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/07/03/最大索引堆/">
+    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/08/01/2018-08-01-十进制转二进制(知乎)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisa">
@@ -1328,7 +1455,7 @@ dp[0] = dp[1] = 1
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/03/最大索引堆/" itemprop="url">最大索引堆</a></h1>
+                <a class="post-title-link" href="/2018/08/01/2018-08-01-十进制转二进制(知乎)/" itemprop="url">十进制转二进制(知乎)</a></h1>
         
 
         <div class="post-meta">
@@ -1340,8 +1467,8 @@ dp[0] = dp[1] = 1
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T23:44:19+08:00">
-                2018-07-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T21:33:29+08:00">
+                2018-08-01
               </time>
             
 
@@ -1380,153 +1507,21 @@ dp[0] = dp[1] = 1
       
         
           
-          最大索引堆
-简介：本文主要实现一个最大索引堆，最大索引堆的意义：当堆中的元素很复杂如每个堆中的元素是一篇文档，交换堆中的元素变得复杂，改为交换堆的index
+          题目：输入一个32位十进制整数，输出它在计算机中的二进制存储
+输入：3
+输出：11
+思路：
 
-实现一个最大索引堆
+取绝对值
+计算源码：除以2取余直至商为0，将余数从后向前打印
+计算补码，对于正数来说，源码=反码=补码；对于负数，源码取反再加1
 
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+代码：
+1234567891011121314151617181920212223242526272829303132333435363738394041class Solu
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/03/最大索引堆/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liyj612@github.io/2018/06/03/最大堆的实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lisa">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lisa’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/03/最大堆的实现/" itemprop="url">最大堆的实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T20:23:11+08:00">
-                2018-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          最大堆的实现
-最大堆简介：根节点的关键字是堆里所有结点关键字中最大者，称为大根堆，又称最大堆。大根堆要求根节点的关键字既大于或等于左子树的关键字值，又大于或等于右子树的关键字值。
-性质：
-
-堆是一棵完全二叉树
-最大堆的任一子树也是最大堆
-
-简介：本文主要实现最大堆以及最大堆的一些基本功能，包括插入元素(插入之后仍为最大堆)，删除元素(删除之后仍保证为最大堆)
-
-定义一个最大堆
-
-123456789
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/03/最大堆的实现/#more" rel="contents">
+            <a class="btn" href="/2018/08/01/2018-08-01-十进制转二进制(知乎)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1568,7 +1563,7 @@ dp[0] = dp[1] = 1
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1614,7 +1609,7 @@ dp[0] = dp[1] = 1
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1627,7 +1622,7 @@ dp[0] = dp[1] = 1
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
